@@ -1,0 +1,7 @@
+- Unix
+-Bash
+-Git
+-Javacript
+-HTML
+-CSS
+

@@ -48,3 +48,35 @@ console.log(maiorNome(["José", "Lucas","Nádia", "Fernanda", "Cairo", "Joana" ]
 //porque daí o for vai rodar ate o fim e sempre comparar com o jose, e como a ultima palavra é a joana, 
 //vai comparar com a joana e é maior que jose e retornar a joana, precisa ser a variavel maiorNome que começa no jose, mas assim
 //que achar uma palavra maior, irá trocar por essa, e começará a comparar com essa.
+
+//ex 5
+
+
+
+//ex6
+// function somaTodosNumeros(numeros) {
+//   let total = 0;
+//   for (let index = 1; index <= numeros; index += 1) {
+//     total = total + index;
+//   }
+//   return total;
+// }
+// console.log(somaTodosNumeros(5)); //15
+
+//ex 7 
+
+// function verificaFimPalavra(palavra, fimPalavra) {
+//   palavra = palavra.split('');//separou para virar array 
+//   fimPalavra = fimPalavra.split('');
+//   controle = true;
+//   for (let index = 0; index < fimPalavra.length; index += 1) {
+//     if (palavra[palavra.length - fimPalavra.length + index] != fimPalavra[index]) {
+//       controle = false;
+//     }
+//   }
+//   return controle;
+}
+//ex trampolim e a palavra lim , pega a palavra tira a palvra fim vai começar no indice 6
+// l daí precisa comar o index poque depois preciso ver o i e depois o m.
+// compara com a palavra fim ficando assim: tarmpolim -index 6 i index 7 m index 8 
+// lim index 0, 1 e 2.

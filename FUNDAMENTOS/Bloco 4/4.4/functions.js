@@ -75,7 +75,7 @@ console.log(maiorNome(["José", "Lucas","Nádia", "Fernanda", "Cairo", "Joana" ]
 //     }
 //   }
 //   return controle;
-}
+
 //ex trampolim e a palavra lim , pega a palavra tira a palvra fim vai começar no indice 6
 // l daí precisa comar o index poque depois preciso ver o i e depois o m.
 // compara com a palavra fim ficando assim: tarmpolim -index 6 i index 7 m index 8 

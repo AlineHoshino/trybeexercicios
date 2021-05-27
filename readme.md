@@ -28,3 +28,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
  4-3: JavaScript - Lógica de programação :heavy_check_mark:
  4-4: Javascript- Objetos e funções :heavy_check_mark:
  4-5: Projeto Playground Functions :heavy_check_mark:
+ ### Bloco 5: Javascript: DOM,Eventos e Web Storage
+ 5-1: Javascript- DOM e seletores :heavy_check_mark:
+ 5-2: Javascript- Trabalhando com elementos :heavy_check_mark:
+ 5-3: Javascript- Eventos

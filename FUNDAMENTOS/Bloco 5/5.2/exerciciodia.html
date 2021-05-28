@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Exercise - 1
+      const elementH1 = document.createElement('h1');
+      elementH1.innerHTML = 'Exercício 5.2 - JavaScript DOM';
+      document.body.appendChild(elementH1);
+
+      // Exercise - 2
+      const elementDivMain = document.createElement('div');
+      elementDivMain.className = 'main-content';
+      document.body.appendChild(elementDivMain);
+
+      // Exercise - 3
+      const elementDivCenter = document.createElement('div');
+      elementDivCenter.className = 'center-content';
+      elementDivMain.appendChild(elementDivCenter);
+
+      // Exercise - 4
+      const paragraph = document.createElement('p');
+      paragraph.innerHTML = 'Texto Show';
+      elementDivCenter.appendChild(paragraph);
+
+      // Exercise - 5
+      const elementDivLeft = document.createElement('div');
+      elementDivLeft.className = 'left-content';
+      elementDivMain.appendChild(elementDivLeft);
+
+      // Exercise - 6
+      const elementDivRight = document.createElement('div');
+      elementDivRight.className = 'right-content';
+      elementDivMain.appendChild(elementDivRight);
+
+      // Exercise - 7
+      const elementImg = document.createElement('img');
+      elementImg.className = 'small-image';
+      elementImg.src = 'https://picsum.photos/200';
+      elementDivLeft.appendChild(elementImg);
+       // Exercise - 8
+       const elementUl = document.createElement('ul');//primeiro cria ul
+      elementDivRight.appendChild(elementUl);//filha da div da direita
+      const arrayNumbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis',
+        'Sete', 'Oito', 'Nove', 'Dez']//cria o array
+      for (let num in arrayNumbers) {
+        const elementLi = document.createElement('li');//cria a lista
+        elementLi.innerHTML = arrayNumbers[num];//insere o array
+        elementUl.appendChild(elementLi);//poe a lista no ul
+      }
+      //Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+      // Exercise - 9
+      for (let index = 1; index <= 3; index += 1) {//array para repetir 3 vezes
+        const elementH3 = document.createElement('h3');
+        elementH3.innerHTML = 'h3 ' + index;//um texto para cada h3
+        elementDivMain.appendChild(elementH3);
+      }
+      const title = document.getElementsByTagName('h1')[0];
+      title.className = 'title';
+// Exercise 2
+const elementsH3 = document.getElementsByTagName('h3');//puxa o elemento h3
+      for (let index = 0; index < 3; index += 1) {//for 3 vezes
+        elementsH3[index].className = 'description';
+      }
+      //Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
+      const divLeftContent = document.getElementsByClassName('left-content')[0];//puxa a div
+      elementDivMain.removeChild(divLeftContent);//como ela é filha da div main coloca a div main e remove a filha dela.
+      // Exercise 4
+      const divRightContent = document.getElementsByClassName('right-content')[0];
+      divRightContent.style.marginRight='auto';
+      //Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+      // Exercise 5
+     elementDivMain.style.backgroundColor='green';//o pai da center é a div main 
+      // Exercise 6
+      elementUl.lastChild.remove();//pegou o ultimo filho da ul 
+      elementUl.lastChild.remove();//penultimo filho da ul
+
+
+
+
+    </script>
+  </body>
+</html>

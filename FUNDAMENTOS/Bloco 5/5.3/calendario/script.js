@@ -3,9 +3,9 @@ function createDaysOfTheWeek() {
   const weekDaysList = document.querySelector('.week-days');
 
   for (let index = 0; index < weekDays.length; index += 1) {
-    const days = weekDays[index];
+    const day = weekDays[index];
     const dayListItem = document.createElement('li');
-    dayListItem.innerHTML = days;
+    dayListItem.innerHTML = day;
 
     weekDaysList.appendChild(dayListItem);
   };

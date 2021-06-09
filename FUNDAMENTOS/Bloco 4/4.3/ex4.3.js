@@ -82,7 +82,7 @@ for (let lineIndex = 0; lineIndex <= midOfMatrix; lineIndex += 1) {// 4 voltas 4
 
 //ex 6 vi essa solução no slack apresentada pelo murilo rainho
 
-/ Exercício 6
+// Exercício 6
 n = 11
 primo = 0
 for (let i = 2; i < n; i++) {

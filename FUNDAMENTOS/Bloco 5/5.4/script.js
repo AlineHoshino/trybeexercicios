@@ -22,3 +22,4 @@ window.onload=function(){
    document.body.style.backgroundColor=savedbackground;
 }
 
+//exercício baseado no vídeo do gabarito

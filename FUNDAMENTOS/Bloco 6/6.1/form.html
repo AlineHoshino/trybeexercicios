@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="get">
+  <fieldset class="field">
+    <p>Preencha o formulário a seguir:</p>
+    <div class="content">
+      <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="" maxlength="40" required>
+  </div>
+  <div class="content">
+    <label for="email">Endereço de e-mail: </label>
+    <input class="email-input" type="email" name="email" id="email" maxlength="50" required>
+  </div>
+  <div class="content">
+    <label for="cpf">CPF: </label>
+    <input type="text" name="cpf" id="cpf" maxlength="11" required>
+  </div>
+  <div class="content">
+    <label for="address">Endereço: </label>
+    <input type="text" name="address" id="address" maxlength="200" required>
+  </div>
+  <div class="content">
+    <label for="estado"> Escolha seu Estado:</label>
+    <select name="estado" id="estado" required></select>
+  </div>
+  <div class="content">
+    <label for="imovel"> Imóvel:</label>
+    <input type="radio" name="imovel" id="imovel" checked><span>Casa</span>
+    <input type="radio" name="imovel" id="imovel"><span>Apartamento</span>
+  </div>
+    </fieldset>
+    <fieldset class="field2">
+      <div class="content">
+      <p>Nesta segunda parte preencha com suas informações profissionais</p>
+      <label for="curriculo"></label>
+      <textarea name="curriculo" id="curriculo" cols="30" rows="20" placeholder="Coloque o resumo do seu currículo aqui" maxlength="1000"required></textarea>
+    </div>
+    <div class="content">
+      <label for="cargo">Cargo</label>
+      <input type="text" name="cargo" id="cargo" maxlength="40" required>
+    </div>
+    <div class="content">
+      <label for="descricao">Descrição do cargo</label>
+      <input type="text" name="descricao" id="descricao" maxlength="500"required>
+    </div>
+    <div class="content">
+      <label for="startDate">Data de início: </label>
+      <input type="text" class="input-data" name="startDate" value="" required>
+    </fieldset>
+    <button class="submit-button" type="submit">Enviar</button>
+  </form>
+<script src="script.js"></script>
+</body>
+</html>

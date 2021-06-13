@@ -1,10 +1,15 @@
 # Trybe
 
-Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Aline Eiko Hoshino](https://www.linkedin.com/in/alinehoshino/)_ enquanto estudante na [Trybe](https://www.betrybe.com/) ! ![blush](https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png)
+Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Aline Eiko Hoshino](https://www.linkedin.com/in/alinehoshino/)_ enquanto estudante na [Trybe](https://www.betrybe.com/) ! !
+ :blush:
 
-_"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vida e construir uma carreira de sucesso em tecnologia, onde a pessoa só paga quando conseguir um bom trabalho."_
+A Trybe é uma escola de desenvolvimento web que tem comprometimento genuíno
+com o sucesso profissional das pessoas estudantes. 
 
-O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
+São mais de 1500 horas de formação que aborda fundamentos de desenvolvimento
+web, desenvolvimento, Front-end, Back-end, ciência da computação,
+metodologias ágeis e habilidades comportamentais.
+EN:
 
 ## Introdução - Desenvolvimento Web :hourglass_flowing_sand:
 
@@ -44,3 +49,10 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 5.5: Projeto - Art com pixels :heavy_check_mark:
 5.6: Projeto - To do List :heavy_check_mark:
 5.7: Projeto bônus - Meme generator :heavy_check_mark:
+
+### Bloco 6: HTML e CSS: Forms, Flexbox e Responsivo
+
+6.1: HTML & CSS- Forms :heavy_check_mark:
+6.2: Bibliotecas Javascript e Frameworks CSS :heavy_check_mark:
+6.3: CSS Flexbox- Parte 1 :heavy_check_mark:
+6.4: CSS Flexbox- Parte 2 :heavy_check_mark:

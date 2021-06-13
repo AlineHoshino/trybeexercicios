@@ -137,7 +137,16 @@
         required: 'Este campo é obrigatório.',
       }
     },
-    submitHandler: function (form, values) {
-      console.log(form, values);
-    }});
-  
+    submitHandler: function (form, values, ajax) {
+
+      ajax({
+        url: 'https://just-validate-api.herokuapp.com/submit',
+        method: 'POST',
+        data: values,
+        async: true,
+        callback: function(response)  {
+          console.log(response)
+        }
+      });
+    },
+  });

@@ -1,0 +1,1 @@
+Nesse bloco aprendemos a usar o localstorage.

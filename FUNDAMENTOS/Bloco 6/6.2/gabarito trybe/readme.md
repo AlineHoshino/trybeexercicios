@@ -1,0 +1,1 @@
+Através do gabarito da Trybe aprendi o uso de bibliotecas.

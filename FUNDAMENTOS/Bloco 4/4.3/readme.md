@@ -1,0 +1,1 @@
+Exercício 4.3 sobre como criar piramides de asterisco em javascript

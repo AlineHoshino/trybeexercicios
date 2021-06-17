@@ -1,0 +1,43 @@
+body {
+font-size:larger
+}
+h1 {
+font-size:x-large
+}
+h2 {
+font-size: larger;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding:10px;
+    margin: 0 0 20px 0;
+}
+
+@media screen and (min-width: 794px) {
+  body {
+      background: rgb(243, 208, 235);
+      margin: 25px;
+      font-size: x-large;
+    }
+    .container{
+      display:flex;
+      flex-wrap: wrap;
+    }
+    figure{
+      width:45%;
+    }
+  }
+
+  @media screen and (min-width: 1300px) {
+    body{
+      background-color: rgb(194, 171, 216);
+      font-size: xx-large;
+      margin:40px;
+      max-width: 80%;
+    }
+  }

@@ -7,9 +7,9 @@ A Trybe é uma escola de desenvolvimento web que tem comprometimento genuíno
 com o sucesso profissional das pessoas estudantes. 
 
 São mais de 1500 horas de formação que aborda fundamentos de desenvolvimento
-web, desenvolvimento, Front-end, Back-end, ciência da computação,
+web, desenvolvimento Front-end, Back-end, ciência da computação,
 metodologias ágeis e habilidades comportamentais.
-EN:
+
 
 ## Introdução - Desenvolvimento Web :hourglass_flowing_sand:
 
@@ -56,3 +56,11 @@ EN:
 6.2: Bibliotecas Javascript e Frameworks CSS :heavy_check_mark:
 6.3: CSS Flexbox- Parte 1 :heavy_check_mark:
 6.4: CSS Flexbox- Parte 2 :heavy_check_mark:
+6.5: CSS Responsivo- Mobile First :heavy_check_mark:
+6.6: Projeto Trybewarts :heavy_check_mark:
+
+### Bloco 7: Introdução à Javascript ES6 e Testes Unitários
+
+7.1:Javascript ES6- let, const, arrow function e template literals :heavy_check_mark:
+7.2: Javascript ES6-Objects :heavy_check_mark:
+7.3: Teste unitários em Javascript :heavy_check_mark:

@@ -63,10 +63,16 @@ const books = [
   },
 ];
 
-// Código do exercício aqui:
+// Adicione o código do exercício aqui: // Com a ajuda da Sthefany e Luiza um jeito mais simples- resolução semelhante ao exercício do maior número 
 
-const authorBornIn1947 =()=> books.find((book => book.author.birthYear === 1947)).author.name;
-/* Explicando chamei o array books.find que econtrará o que eu pedi, depois book retornará os dados de cada livro um a um, desses dados quero que puxe o ano de nascimento, só que para acessar o ano de nascimento está dentro do objeto autor, por isso preciso digitar author.birthyear para puxar o ano de nascimento,o find vai encontrar aquele  ano de 1947 
-depois disso, chamo o author de novo só que o name para ver qual o nome do autor nascido em 1947.*/
-console.log(authorBornIn1947())
-assert.strictEqual(authorBornIn1947(), 'Stephen King');
+function smallerName() {
+  let nameBook = books[0].name // define o primeiro livro para servir de comparação com todos os outros
+  books.forEach((book) => { // como se fosse um for vai ver livro por livro 
+    if(book.name.length < nameBook.length){ // daí vai comparar o tamanho do nome do livro com a variavel nameBook
+      nameBook = book.name; // toda vez que algum livro tiver o nome menor que o namebook, o namebook vai receber o nome desse livro e atualizar. 
+    }
+ });
+    return nameBook;
+}
+
+assert.strictEqual(smallerName(), 'Duna');

@@ -63,10 +63,24 @@ const books = [
   },
 ];
 
-// Código do exercício aqui:
 
-const authorBornIn1947 =()=> books.find((book => book.author.birthYear === 1947)).author.name;
-/* Explicando chamei o array books.find que econtrará o que eu pedi, depois book retornará os dados de cada livro um a um, desses dados quero que puxe o ano de nascimento, só que para acessar o ano de nascimento está dentro do objeto autor, por isso preciso digitar author.birthyear para puxar o ano de nascimento,o find vai encontrar aquele  ano de 1947 
-depois disso, chamo o author de novo só que o name para ver qual o nome do autor nascido em 1947.*/
-console.log(authorBornIn1947())
-assert.strictEqual(authorBornIn1947(), 'Stephen King');
+const expectedResult = false;
+// Ex 7  - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.Criação da solução pela Julia:
+function authorUnique() {
+  let result = true;// aqui começa como verdadeiro o resultado
+
+  books.forEach((book1)=>{
+    const firstDate = book1.author.birthYear;// criou uma constante que pega o ano de nascimento
+    const firstName = book1.author.name;// uma que pega o nome
+  books.forEach((book2)=>{
+    const secondDate = book2.author.birthYear;
+    const secondName = book2.author.name;
+    if (firstDate === secondDate && secondName !==firstName){// se ambos autores nasceram no mesmo dia, mas tem nomes diferentes retornará falso. Se o nome for igual você estará comparando o mesmo autor, por isso nome deve ser diferente.
+      result = false;
+    }
+  })
+  })
+  return result;
+}
+console.log(authorUnique());
+assert.strictEqual(authorUnique(), expectedResult);

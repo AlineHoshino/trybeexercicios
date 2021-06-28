@@ -63,10 +63,22 @@ const books = [
   },
 ];
 
-// Código do exercício aqui:
 
-const authorBornIn1947 =()=> books.find((book => book.author.birthYear === 1947)).author.name;
-/* Explicando chamei o array books.find que econtrará o que eu pedi, depois book retornará os dados de cada livro um a um, desses dados quero que puxe o ano de nascimento, só que para acessar o ano de nascimento está dentro do objeto autor, por isso preciso digitar author.birthyear para puxar o ano de nascimento,o find vai encontrar aquele  ano de 1947 
-depois disso, chamo o author de novo só que o name para ver qual o nome do autor nascido em 1947.*/
-console.log(authorBornIn1947())
-assert.strictEqual(authorBornIn1947(), 'Stephen King');
+const expectedResult = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin',
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991,
+};
+
+// Resposta
+function getNamedBook() {
+  return books.find((book)=>book.name.length === 26)// vai ver livro por livro pegar o nome de cada livro e ver o tamanho se é igual a 26
+}
+console.log(getNamedBook())// console da funcao só para ver se está retornando o resultado esperado.
+
+assert.deepStrictEqual(getNamedBook(), expectedResult);

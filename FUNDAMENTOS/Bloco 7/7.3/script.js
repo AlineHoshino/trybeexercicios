@@ -1,20 +1,20 @@
 // //ex1
-// const assert = require('assert');
+const assert = require('assert');
 
-// function sum(a, b) {
-//   if (typeof a !== 'number' || typeof b !== 'number') {
-//     throw new Error('parameters must be numbers');
-//   }
+function sum(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('parameters must be numbers');
+  }
 
-//   return a + b;
-// }
+  return a + b;
+}
 
-// assert.strictEqual(sum(4,5),9);
-// assert.strictEqual(sum(0,0),0);
-// assert.throws(()=>sum(4,"5"));
-// assert.throws(()=>{
-//   sum(4,"5"), 'parameters must be numbers'
-// })
+assert.strictEqual(sum(4,5),9);
+assert.strictEqual(sum(0,0),0);
+assert.throws(()=>sum(4,"5"));
+assert.throws(()=>{
+  sum(4,"5"), 'parameters must be numbers'
+})
 
 // //ex 2
 
@@ -221,18 +221,18 @@
 // assert.strictEqual(typeof greaterThanTen, 'function');
 // assert.deepStrictEqual(greaterThanTen(parameter), result);
 
-const assert = require ('assert');
-function secondThirdSmallest(array) {
-  let results = []
-  array.sort((a, b) => a - b
-);
-  results.push(array[1], array[2]);
-  return results;
-};
+// const assert = require ('assert');
+// function secondThirdSmallest(array) {
+//   let results = []
+//   array.sort((a, b) => a - b
+// );
+//   results.push(array[1], array[2]);
+//   return results;
+// };
 
-const parameter = [4, 10, 32, 9, 21, 90, 5, 11, 8, 6];
-const result = [5, 6];
-assert.strictEqual(typeof secondThirdSmallest, 'function');
-assert.deepStrictEqual(secondThirdSmallest(parameter), result);
+// const parameter = [4, 10, 32, 9, 21, 90, 5, 11, 8, 6];
+// const result = [5, 6];
+// assert.strictEqual(typeof secondThirdSmallest, 'function');
+// assert.deepStrictEqual(secondThirdSmallest(parameter), result);
 
 //exercícios foram comentados para um teste não afetar o outro 

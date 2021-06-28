@@ -16,18 +16,16 @@ const newEmployees = (employeeGenerator) => {
 
 console.log(newEmployees(employeeGenerator));
 
-// //2 
-// // math.floor tira o numero flutuante ou seja 4,5 por exemplo
-// //A função "random" gera números aleatórios reais entre (zero e x-1). entao math.random()*5 dá 0 até x-1=5-1= 4, se somar +1, começa com 1 e termina em 5
-// //exemplo gerando de 100 a 999 var numero = Math.floor(Math.random() * 900) + 100;
-//A função "random" gera números aleatórios reais entre (zero e x-1). Sendo assim, verifique que:
-//fn(0) = 0 * 899 + 100 = 0 + 100 = 100 Muito interessante
-//fn(999) = 1 * 899 + 100 = 899 + 100 = 999
+// ex 2 
+// // math.floor tira o numero flutuante ou seja 4,5 por exemplo virando 4 
+
+
+
 
 const verificacao = (numeroApostado, numeroSorteado)=> numeroApostado === numeroSorteado;
 
 const HofSorteio=(numeroApostado,verificacao)=>{
-  const numeroSorteado = Math.floor(Math.random() * 5 + 1)
+  const numeroSorteado = Math.floor(Math.random() * 5 + 1) //A função "random" gera números aleatórios reais entre (zero e x-1). entao math.random()*5 dá 0 até x-1=5, daí 5-1= 4.Depois, se somar +1, começa com 1 e termina em 5
   verificacao(numeroApostado,numeroSorteado)
   if(numeroApostado === numeroSorteado){
     return "Parabéns você ganhou";
@@ -37,7 +35,7 @@ const HofSorteio=(numeroApostado,verificacao)=>{
 
 console.log(HofSorteio(3,verificacao));
 
-//ex 3 Julia me deixou tirar print screen e eu entendi o código dela.Através desse exemplo de código
+//ex 3 Código da Júlia.Através desse exemplo de código
 //fica muito nítido que pode ter qqer nome os parametros na funcao, desde que no final você chame as variáveis que o exercício pede
 
 // Crie uma HOF que receberá três parâmetros. O primeiro será um array de respostas corretas (Gabarito),
@@ -60,7 +58,7 @@ const checagem = (a,b)=>{
       pontuacao += 1;
     }
     else{
-      pontuacao -= 0.5;
+      pontuacao -= 0.5;// usa subtracao porque errou o gabarito, por isso perde ponto
     }
   }
   return pontuacao;

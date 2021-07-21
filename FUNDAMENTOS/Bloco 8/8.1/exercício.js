@@ -70,3 +70,9 @@ const checagemRespostas = (gabarito, respostas, calllback)=>{
 
 console.log(checagemRespostas(rightAnswers,studentAnswers,checagem));
 
+const action = (number) => {
+  if (number % 2 === 0) {
+    console.log(number, 'is even');
+  }
+};
+

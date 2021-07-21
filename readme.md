@@ -123,7 +123,7 @@ metodologias ágeis e habilidades comportamentais.
 
 10.4: Projeto Jest Assíncrono e Mocking :heavy_check_mark:
 
-## Introdução - Desenvolvimento Web :hourglass_flowing_sand:
+##  Desenvolvimento Front- End :hourglass_flowing_sand:
 
 ### Bloco 11: Introdução ao react
 

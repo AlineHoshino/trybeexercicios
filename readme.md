@@ -11,7 +11,7 @@ web, desenvolvimento Front-end, Back-end, ciência da computação,
 metodologias ágeis e habilidades comportamentais.
 
 
-## Introdução - Desenvolvimento Web :hourglass_flowing_sand:
+## Introdução - Desenvolvimento Web :heavy_check_mark:
 
 ### Bloco 1: Introdução - Unix & Shell
 
@@ -101,6 +101,33 @@ metodologias ágeis e habilidades comportamentais.
 
 8.4: Javascript ES6- High Order Functions-reduce :heavy_check_mark:
 
-8.5:Javascript ES6 - Spread Operator, parâmetro rest, destructuring e mais
+8.5:Javascript ES6 - Spread Operator, parâmetro rest, destructuring e mais :heavy_check_mark:
 
-8.6: Projeto zoo functions
+8.6: Projeto zoo functions :heavy_check_mark:
+
+### Bloco 9: Javascript Assincrono e Promises
+
+9.1 : Javascript assíncrono e callback :heavy_check_mark:
+
+9.2: Javascript Promises :heavy_check_mark:
+
+9.3: Projeto carrinho de compras :heavy_check_mark:
+
+### Bloco 10: Testes automatizados com Jest
+
+10.1: Primeiros passos no Jest :heavy_check_mark:
+
+10.2: Jest- testes assíncronos :heavy_check_mark:
+
+10.3: Jest- simulando comportamentos :heavy_check_mark:
+
+10.4: Projeto Jest Assíncrono e Mocking :heavy_check_mark:
+
+## Introdução - Desenvolvimento Web :hourglass_flowing_sand:
+
+### Bloco 11: Introdução ao react
+
+11.1: Hello World no react :heavy_check_mark:
+
+11.2: Componentes React :heavy_check_mark:
+

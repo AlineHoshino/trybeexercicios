@@ -12,7 +12,7 @@ class App extends React.Component {
     this.all = this.all.bind(this);
 
     this.state = {
-      list: [...pokemons],
+      list: pokemons,
       index: 0,
     }
   }

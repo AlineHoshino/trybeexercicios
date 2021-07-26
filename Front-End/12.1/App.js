@@ -1,3 +1,4 @@
+// base de estudo branch de mariana mohr
 import React from 'react';
 import './App.css';
 import pokemons from './data';

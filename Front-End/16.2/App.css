@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.App h1 {
+  color:rgba(101, 101, 207, 0.788)
+}
+
+.App h3 {
+  color:rgba(219, 35, 179, 0.788)
+}
+
+.button-add {
+  margin-top: 30px;
+  border-radius: 8px;
+  width:100px;
+}
+

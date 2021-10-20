@@ -123,11 +123,100 @@ metodologias ágeis e habilidades comportamentais.
 
 10.4: Projeto Jest Assíncrono e Mocking :heavy_check_mark:
 
-##  Desenvolvimento Front- End :hourglass_flowing_sand:
+##  Desenvolvimento Front- End :heavy_check_mark:
 
 ### Bloco 11: Introdução ao react
 
 11.1: Hello World no react :heavy_check_mark:
 
 11.2: Componentes React :heavy_check_mark:
+
+11-3: Projeto - Movie Cards Library :heavy_check_mark:
+
+### Bloco 12: Componentes com estado, evento e formulaŕio com react
+
+12-1: Componentes com estado e eventos :heavy_check_mark:
+
+12-2: Formulários no React :heavy_check_mark:
+
+12-3: Projeto - Movie Cards Library Stateful :heavy_check_mark:
+
+### Bloco 13: Ciclo de vida de componentes e react router
+
+13-1: Ciclo de vida de componentes :heavy_check_mark:
+
+13-2: React Router :heavy_check_mark:
+
+13-3: Projeto - Movie Cards Library CRUD :heavy_check_mark:
+
+### Bloco 14: Metodologias Ágeis 
+
+14-1: Metodologias ágeis :heavy_check_mark:
+
+14-2: Projeto - Frontend Online Store :heavy_check_mark:
+
+### Bloco 15: Testes automatizados com react testing library 
+
+15-1: RTL -Primeiros passos :heavy_check_mark:
+
+15-2:RTL- mocks e inputs :heavy_check_mark:
+
+15-3:RTL- testando react router :heavy_check_mark:
+
+15-4: Projeto - Testes em React :heavy_check_mark:
+
+### Bloco 16: Gerenciamento de estado com Redux 
+
+16-1: Introdução ao Redux :heavy_check_mark:
+
+16-2: Usando redux no react - Parte 1 :heavy_check_mark:
+
+16-3: Usando redux no react - Prática :heavy_check_mark:
+
+16-4: Usando redux no react- Actions assíncronas :heavy_check_mark:
+
+16-5: Testes em React-Redux :heavy_check_mark:
+
+16-6: Projeto - Trybe-Wallet :heavy_check_mark:
+
+### Bloco 17: Projeto Jogo de Trivia
+
+17-1: Projeto - Jogo de Trivia :heavy_check_mark:
+
+### Bloco 18: Context API e React Hooks
+
+18-1: Context API do React :heavy_check_mark:
+
+18-2: React Hooks - useState e useContext :heavy_check_mark:
+
+18-3: React Hooks - useEffect e Hooks customizados :heavy_check_mark:
+
+18-4: Projeto - StarWars Datatable com Context API e Hooks :heavy_check_mark:
+
+18.5-1: Projeto - App de Receitas :heavy_check_mark:
+
+##  Desenvolvimento Back- End
+
+### Bloco 19: Introdução à SQL
+
+19-1: Banco de dados SQL :heavy_check_mark:
+
+19-2: Encontrando dados em um banco de dados :heavy_check_mark:
+
+19-3: Filtrando dados de forma específica :heavy_check_mark:
+
+19-4: Manipulando tabelas :heavy_check_mark:
+
+19-5: Projeto All for one :heavy_check_mark:
+
+### Bloco 20: Funções SQL, Joins e subqueries
+
+20-1: Funções mais usadas no sql :heavy_check_mark:
+
+
+
+
+
+
+
 

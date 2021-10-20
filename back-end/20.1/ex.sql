@@ -38,3 +38,43 @@ FROM hr.employees
 GROUP BY job_id
 HAVING job_id <> 'IT_PROG'
 ORDER BY `average_salary` DESC;
+--10. Escreva um query que exiba média salarial e o número de funcionários de todos 
+--os departamentos com mais de dez funcionários. Dica: agrupe pelo department_id .
+SELECT department_id,
+    AVG(salary) AS 'average_salary' ,
+    COUNT(*) AS'number_of_employees'
+FROM hr.employees
+GROUP BY department_id
+HAVING `number_of_employees` > 10;
+--11 -. Escreva uma query que atualize a coluna PHONE_NUMBER , 
+--de modo que todos os telefones iniciados por 515 agora devem iniciar com 777 .
+UPDATE hr.employees
+SET phone_number = REPLACE(phone_number, '515', '777')
+WHERE phone_number LIKE '515%';
+--12.Escreva uma query que só exiba as informações dos funcionários 
+--cujo o primeiro nome tenha oito ou mais caracteres.
+SELECT *
+FROM hr.employees
+WHERE LENGTH(first_name) >= 8;
+/* 13. Escreva uma query que exiba as seguintes informações de cada funcionário: id , 
+primeiro nome e ano no qual foi contratado (exiba somente o ano). */
+SELECT EMPLOYEE_ID, FIRST_NAME,YEAR(HIRE_DATE) FROM hr.employees;
+/*14. Escreva uma query que exiba as seguintes informações de cada funcionário: id ,
+ primeiro nome e dia do mês no qual foi contratado (exiba somente o dia).*/
+SELECT EMPLOYEE_ID, FIRST_NAME,DAY(HIRE_DATE) FROM hr.employees;
+/* 15 Escreva uma query que exiba as seguintes informações de cada funcionário:
+ id , primeiro nome e mês no qual foi contratado (exiba somente o mês).*/
+SELECT EMPLOYEE_ID, FIRST_NAME,MONTH(HIRE_DATE) FROM hr.employees;
+/* 16 Escreva uma query que exiba os nomes dos funcionários em letra maiúscula.*/
+SELECT UCASE(FIRST_NAME) FROM hr.employees;
+/*17Escreva uma query que exiba o sobrenome e a data de contratação de todos 
+os funcionário contratados em julho de 1987.*/
+SELECT LAST_NAME, HIRE_DATE
+FROM hr.employees
+WHERE HIRE_DATE  BETWEEN '1987-07-01'  AND '1987-07-31';
+/*18 Escreva uma query que exiba as seguintes informações de cada funcionário:
+ nome , sobrenome , tempo que trabalha na empresa (em dias) .*/
+ SELECT first_name,
+    last_name,
+    DATEDIFF(CURRENT_DATE() , HIRE_DATE) 'days_worked'
+FROM hr.employees;

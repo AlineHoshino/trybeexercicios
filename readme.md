@@ -213,6 +213,12 @@ metodologias ágeis e habilidades comportamentais.
 
 20-1: Funções mais usadas no sql :heavy_check_mark:
 
+20.2: Descomplicando JOINS, UNIOS e Subqueries :heavy_check_mark:
+
+20.3: Stored Routines e Stored functions :heavy_check_mark:
+
+20.4: Projeto Vocabulary Booster :heavy_check_mark:
+
 
 
 

@@ -1,65 +1,120 @@
-SELECT s.first_name, s.last_name, a.address
-FROM sakila.staff as s
-INNER JOIN sakila.address AS a
-ON s.address_id = a.address_id; 
+/*Exercício 1: Utilizando o INNER JOIN , encontre as vendas nacionais 
+( domestic_sales ) e internacionais ( international_sales ) de cada filme.*/
 
-/*Exercício 4: Exiba o nome , email , id do endereço , endereço e distrito dos clientes 
-que moram no distrito da California e que contêm "rene" em seus nomes.
- As informações podem ser encontradas nas tabelas address e customer . */
-SELECT C.first_name,C.email, A.address_id, A.address,district  
- FROM sakila.customer as C
- INNER JOIN sakila.address as A
- ON C.address_id = A.address_id
- WHERE
-    A.district = 'California'
-        AND C.first_name LIKE '%rene%';
-
-/* Exiba o nome e a quantidade de endereços dos clientes cadastrados.
- Ordene seus resultados por nomes de forma decrescente. 
-Exiba somente os clientes ativos. As informações podem ser encontradas na tabela address e customer .*/
-SELECT C.first_name, COUNT(*) as qtdadeAdress 
-FROM sakila.customer  as C
-INNER JOIN sakila.address as A
-ON C.address_id = A.address_id
-WHERE C.active = 1
-GROUP BY C.first_name
-ORDER BY C.first_name DESC;
-
-/* ex 6 Exercício 6: Monte uma query que exiba o nome , sobrenome e a média de valor ( amount ) 
-paga aos funcionários no ano de 2006. Use as tabelas payment e staff . 
-Os resultados devem estar agrupados pelo nome e sobrenome do funcionário.*/
+USE Pixar;
 
 SELECT 
-    stf.first_name,
-    stf.last_name,
-    AVG(pay.amount) AS `Média de pagamento`
+    m.title, b.domestic_sales, b.international_sales
 FROM
-    sakila.staff AS stf
+    Movies m
         INNER JOIN
-    sakila.payment pay ON stf.staff_id = pay.staff_id
+    BoxOffice b ON b.movie_id = m.id;
+/*Utilizando o INNER JOIN , faça uma busca que retorne o número de vendas para cada filme 
+que possui um número maior de vendas internacionais
+ ( international_sales ) do que vendas nacionais ( domestic_sales ).*/
+ SELECT M.title FROM Pixar.Movies as M
+INNER JOIN Pixar.BoxOffice AS B
+ON B.movie_id = M.id
+WHERE B.international_sales > B.domestic_sales;
+
+/*ex 3 Exercício 3: Utilizando o INNER JOIN , 
+faça uma busca que retorne os filmes e sua avaliação ( rating ) em ordem decrescente.*/
+SELECT m.title, B.rating FROM Pixar.Movies As m
+INNER JOIN Pixar.BoxOffice AS B
+ON B.movie_id = m.id
+ORDER BY B.rating DESC;
+
+USE Pixar;
+
+SELECT 
+    t.name,
+    t.location,
+    m.title,
+    m.director,
+    m.year,
+    m.length_minutes
+FROM
+    Theater t
+        LEFT JOIN
+    Movies m ON t.id = m.theater_id
+ORDER BY t.name;
+
+/* Como o cinema é o mais importante ele vem antes do left 
+
+
+Utilizando o RIGHT JOIN , faça uma busca que retorne todos os dados dos filmes,
+ mesmo os que não estão em cartaz e, adicionalmente, os dados dos 
+cinemas que possuem estes filmes em cartaz. Retorne os nomes dos cinemas em ordem alfabética*/
+
+USE Pixar;
+
+SELECT 
+    m.title,
+    m.director,
+    m.year,
+    m.length_minutes,
+    t.name,
+    t.location
+FROM
+    Theater t
+        RIGHT JOIN
+    Movies AS m ON t.id = m.theater_id
+ORDER BY t.name;
+
+/* na rigth join vc valoriza a tabela que vem a direita no caso a Movies, que vem depois do right*/
+
+/*Exercício 6: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , 
+que retornem os títulos dos filmes que possuem avaliação maior que 7.5.*/
+com subquery :
+
+USE Pixar;
+
+SELECT 
+    title
+FROM
+    Movies
 WHERE
-    YEAR(pay.payment_date) = 2006
-GROUP BY stf.first_name , stf.last_name;
-/*Exercício 7: Monte uma query que exiba o id do ator , nome , id do filme e titulo do filme ,
- usando as tabelas actor
- , film_actor e film . Dica: você precisará fazer mais de um JOIN na mesma query .*/
+    id IN (SELECT 
+            movie_id
+        FROM
+            BoxOffice
+        WHERE
+            rating > 7.5);
+
+-- inner join 
+
+SELECT m.title FROM Pixar.Movies AS m
+INNER JOIN Pixar.BoxOffice AS b
+ON b.movie_id = m.id
+WHERE b.rating > 7.5;
+
+/* Exercício 7: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , 
+que retornem as avaliações dos filmes lançados depois de 2009.
+Usando SUBQUERY*/
+
+USE Pixar;
+
 SELECT 
-    A.actor_id, A.first_name, F.film_id, F.title
+    rating
 FROM
-    sakila.actor AS A
-        INNER JOIN
-    sakila.film_actor AS FA ON A.actor_id = FA.actor_id
-        INNER JOIN
-    sakila.film AS F ON F.film_id = FA.film_id;
-
-
---SELF JOIN
-
-SELECT 
-    A.title, A.rental_duration, B.title, B.rental_duration
-FROM
-    sakila.film AS A,
-    sakila.film AS B
+    BoxOffice
 WHERE
-    A.rental_duration = B.rental_duration
-HAVING A.rental_duration BETWEEN 2 AND 4;
+    movie_id IN (SELECT 
+            id
+        FROM
+            Movies
+        WHERE
+            year > 2009);
+
+-- inner join 
+
+USE Pixar;
+
+SELECT 
+    b.rating
+FROM
+    BoxOffice b
+        INNER JOIN
+    Movies m ON b.movie_id = m.id
+WHERE
+    m.year > 2009;

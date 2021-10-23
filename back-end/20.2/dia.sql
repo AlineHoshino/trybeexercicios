@@ -1,155 +1,120 @@
-SELECT s.first_name, s.last_name, a.address
-FROM sakila.staff as s
-INNER JOIN sakila.address AS a
-ON s.address_id = a.address_id; 
+/*Exercício 1: Utilizando o INNER JOIN , encontre as vendas nacionais 
+( domestic_sales ) e internacionais ( international_sales ) de cada filme.*/
 
-/*Exercício 4: Exiba o nome , email , id do endereço , endereço e distrito dos clientes 
-que moram no distrito da California e que contêm "rene" em seus nomes.
- As informações podem ser encontradas nas tabelas address e customer . */
-SELECT C.first_name,C.email, A.address_id, A.address,district  
- FROM sakila.customer as C
- INNER JOIN sakila.address as A
- ON C.address_id = A.address_id
- WHERE
-    A.district = 'California'
-        AND C.first_name LIKE '%rene%';
-
-/* Exiba o nome e a quantidade de endereços dos clientes cadastrados.
- Ordene seus resultados por nomes de forma decrescente. 
-Exiba somente os clientes ativos. As informações podem ser encontradas na tabela address e customer .*/
-SELECT C.first_name, COUNT(*) as qtdadeAdress 
-FROM sakila.customer  as C
-INNER JOIN sakila.address as A
-ON C.address_id = A.address_id
-WHERE C.active = 1
-GROUP BY C.first_name
-ORDER BY C.first_name DESC;
-
-/* ex 6 Exercício 6: Monte uma query que exiba o nome , sobrenome e a média de valor ( amount ) 
-paga aos funcionários no ano de 2006. Use as tabelas payment e staff . 
-Os resultados devem estar agrupados pelo nome e sobrenome do funcionário.*/
+USE Pixar;
 
 SELECT 
-    stf.first_name,
-    stf.last_name,
-    AVG(pay.amount) AS `Média de pagamento`
+    m.title, b.domestic_sales, b.international_sales
 FROM
-    sakila.staff AS stf
+    Movies m
         INNER JOIN
-    sakila.payment pay ON stf.staff_id = pay.staff_id
-WHERE
-    YEAR(pay.payment_date) = 2006
-GROUP BY stf.first_name , stf.last_name;
-/*Exercício 7: Monte uma query que exiba o id do ator , nome , id do filme e titulo do filme ,
- usando as tabelas actor
- , film_actor e film . Dica: você precisará fazer mais de um JOIN na mesma query .*/
+    BoxOffice b ON b.movie_id = m.id;
+/*Utilizando o INNER JOIN , faça uma busca que retorne o número de vendas para cada filme 
+que possui um número maior de vendas internacionais
+ ( international_sales ) do que vendas nacionais ( domestic_sales ).*/
+ SELECT M.title FROM Pixar.Movies as M
+INNER JOIN Pixar.BoxOffice AS B
+ON B.movie_id = M.id
+WHERE B.international_sales > B.domestic_sales;
+
+/*ex 3 Exercício 3: Utilizando o INNER JOIN , 
+faça uma busca que retorne os filmes e sua avaliação ( rating ) em ordem decrescente.*/
+SELECT m.title, B.rating FROM Pixar.Movies As m
+INNER JOIN Pixar.BoxOffice AS B
+ON B.movie_id = m.id
+ORDER BY B.rating DESC;
+
+USE Pixar;
+
 SELECT 
-    A.actor_id, A.first_name, F.film_id, F.title
+    t.name,
+    t.location,
+    m.title,
+    m.director,
+    m.year,
+    m.length_minutes
 FROM
-    sakila.actor AS A
-        INNER JOIN
-    sakila.film_actor AS FA ON A.actor_id = FA.actor_id
-        INNER JOIN
-    sakila.film AS F ON F.film_id = FA.film_id;
+    Theater t
+        LEFT JOIN
+    Movies m ON t.id = m.theater_id
+ORDER BY t.name;
+
+/* Como o cinema é o mais importante ele vem antes do left 
 
 
---SELF JOIN
+Utilizando o RIGHT JOIN , faça uma busca que retorne todos os dados dos filmes,
+ mesmo os que não estão em cartaz e, adicionalmente, os dados dos 
+cinemas que possuem estes filmes em cartaz. Retorne os nomes dos cinemas em ordem alfabética*/
+
+USE Pixar;
 
 SELECT 
-    A.title, A.rental_duration, B.title, B.rental_duration
+    m.title,
+    m.director,
+    m.year,
+    m.length_minutes,
+    t.name,
+    t.location
 FROM
-    sakila.film AS A,
-    sakila.film AS B
-WHERE
-    A.rental_duration = B.rental_duration
-HAVING A.rental_duration BETWEEN 2 AND 4;
+    Theater t
+        RIGHT JOIN
+    Movies AS m ON t.id = m.theater_id
+ORDER BY t.name;
 
--- DESAFIO union
+/* na rigth join vc valoriza a tabela que vem a direita no caso a Movies, que vem depois do right*/
 
-/*ex 1 Todos os funcionários foram promovidos a atores. Monte uma query que exiba a união da tabela staff com a tabela actor , exibindo apenas o nome e o sobrenome . 
-Seu resultado não deve excluir nenhum funcionário ao unir as tabelas. */
+/*Exercício 6: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , 
+que retornem os títulos dos filmes que possuem avaliação maior que 7.5.*/
+com subquery :
 
-SELECT first_name, last_name FROM sakila.staff
-UNION ALL 
-SELECT first_name, last_name FROM sakila.actor;
+USE Pixar;
 
-/* ex 2 Exercício 2: Monte uma query que una os resultados das tabelas customer e actor , 
-exibindo os nomes que contém a palavra "tracy" na tabela customer 
-e os que contém "je" na tabela actor . Exiba apenas os resultados únicos.*/
-
-SELECT first_name FROM sakila.customer 
-WHERE first_name LIKE '%TRACY%'
-UNION 
-SELECT first_name 	from 	sakila.actor
-WHERE 	first_name LIKE '%JE%';
-
-/* ex 3 Exercício 3: Monte uma query que exiba a união dos 5 últimos nomes da tabela actor 
-, o primeiro nome da tabela staff e 5 nomes a partir da 15ª posição da tabela customer . 
-Não permita que dados repetidos sejam exibidos. Ordene os resultados em ordem alfabética.*/
-(SELECT first_name FROM sakila.actor 
-ORDER BY first_name DESC
-LIMIT 5)
-UNION 
-(SELECT first_name FROM sakila.staff
-LIMIT 1)
-UNION 
-(SELECT first_name FROM sakila.customer
-LIMIT 5 OFFSET 15) ORDER BY first_name;
-/* ex 4 Você quer exibir uma lista paginada com os nomes e sobrenomes de
- todos os clientes e atores do banco de dados, em ordem alfabética.
-  Considere que a paginação está sendo feita de 15 em 15 resultados 
-e que você está na 4ª página. Monte uma query que simule esse cenário.*/
-(SELECT 
-    first_name, last_name
-FROM
-    sakila.customer
-ORDER BY first_name , last_name
-LIMIT 60) UNION (SELECT 
-    first_name, last_name
-FROM
-    sakila.actor
-ORDER BY first_name , last_name
-LIMIT 60) ORDER BY first_name , last_name LIMIT 15 OFFSET 45;
-
--- exists Usando o EXISTS na tabela books_lent e books , 
---exiba o id e título dos livros que ainda não foram emprestados.
-
-SELECT id, title FROM hotel.Books AS b
-WHERE NOT EXISTS(
-SELECT * FROM hotel.Books_Lent AS bl
-WHERE b.id = bl.book_id);
-
-/*Usando o EXISTS na tabela books_lent e books , exiba o id e
- título dos livros estão atualmente emprestados e que contêm a palavra "lost" no título.*/
 SELECT 
-    id, title
+    title
 FROM
-    hotel.Books b
+    Movies
 WHERE
-    EXISTS( SELECT 
-            *
+    id IN (SELECT 
+            movie_id
         FROM
-            hotel.Books_Lent
+            BoxOffice
         WHERE
-            b.Id = book_id AND b.title LIKE '%lost%');
-/*Exercício 3: Usando a tabela carsales e customer ,
- exiba apenas o nome dos clientes que ainda não compraram um carro.
- SELECT Name FROM hotel.Customers AS c
-WHERE NOT EXISTS(
-SELECT * FROM hotel.CarSales AS CS
-WHERE c.CustomerID = CS.CustomerID);*/
+            rating > 7.5);
+
+-- inner join 
+
+SELECT m.title FROM Pixar.Movies AS m
+INNER JOIN Pixar.BoxOffice AS b
+ON b.movie_id = m.id
+WHERE b.rating > 7.5;
+
+/* Exercício 7: Faça duas buscas, uma utilizando SUBQUERY e outra utilizando INNER JOIN , 
+que retornem as avaliações dos filmes lançados depois de 2009.
+Usando SUBQUERY*/
+
+USE Pixar;
 
 SELECT 
-    cus.name, car.name
+    rating
 FROM
-    hotel.Cars AS car
-        INNER JOIN
-    hotel.Customers AS cus
+    BoxOffice
 WHERE
-    EXISTS( SELECT 
-            *
+    movie_id IN (SELECT 
+            id
         FROM
-            hotel.CarSales
+            Movies
         WHERE
-            CustomerID = cus.CustomerId
-                AND carID = car.ID);
+            year > 2009);
+
+-- inner join 
+
+USE Pixar;
+
+SELECT 
+    b.rating
+FROM
+    BoxOffice b
+        INNER JOIN
+    Movies m ON b.movie_id = m.id
+WHERE
+    m.year > 2009;

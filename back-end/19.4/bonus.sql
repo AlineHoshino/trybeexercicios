@@ -20,3 +20,6 @@ WHERE length_minutes < 100;
  
 DELETE FROM Movies
 WHERE length_minutes < 100;
+
+
+

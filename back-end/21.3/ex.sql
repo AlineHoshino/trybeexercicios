@@ -48,6 +48,44 @@ ON F.language_id = L.language_id;
 
 -- DESAFIOS DE INDEX 
 
+/* exemplo estrutura do index 
+
+ Criando um índice em uma coluna
+CREATE [INDEX | FULLTEXT INDEX | UNIQUE INDEX] nome_indice
+ON tabela (coluna);
+
+Criando um índice composto, em duas ou mais colunas
+CREATE [INDEX | FULLTEXT INDEX | UNIQUE INDEX] nome_indice
+ON tabela (coluna1, coluna2);
+
+
+Excluindo índices
+DROP INDEX nome_do_indice ON tabela;
+
+Entenda o impacto do FULLTEXT INDEX
+Hora de fazer outro exemplo para analisar o impacto que um FULLTEXT INDEX , 
+em conjunto com uma full-text search, , possui na performance de uma query. 
+Para esse exemplo será alterada a coluna address da tabela sakila.address . 
+Veja a criação do índice logo abaixo:
+
+CREATE FULLTEXT INDEX index_address ON sakila.address(address);
+
+Para verificar a diferença na performance, deve-se utilizar os comandos MATCH e AGAINST , conforme foi visto anteriormente no texto sobre full-text search. . Execute a query abaixo e verifique seu custo através do execution plan:
+
+SELECT *
+FROM sakila.address
+WHERE MATCH(address) AGAINST('drive');
+
+Aqui no execution plan leva 0.95
+depois exclui DROP INDEX index_address ON sakila.address;
+
+SELECT *
+FROM sakila.address
+WHERE address LIKE '%drive%';
+
+Aqui no execution plan leva 65.4
+ */
+
 /*Exercício 1: Verifique o impacto de um FULLTEXT INDEX na tabela category
  (banco de dados sakila ) adicionando-o na coluna name . Após ter adicionado o índice,
   mensure o custo da query utilizando o execution plan , como já foi feito em lições anteriores. 
@@ -82,4 +120,24 @@ DROP INDEX postal_code_index ON address;
 SELECT *
 FROM sakila.address
 WHERE postal_code = '36693';
+
+-- desafio alter table --
+
+/*1.Escreva uma query SQL para alterar na tabela localtions o nome da coluna street_address para address , 
+mantendo o mesmo tipo e tamanho de dados.*/
+
+/*solução: dei um table inspector para ver qual era o tipo de dado vi que era varchar 40, daí mantive isso.
+Uso do change para mudar o nome da coluna */
+
+ALTER TABLE locations CHANGE COLUMN STREET_ADDRESS ADDRESS VARCHAR(40);
+
+/*2 Escreva uma query SQL para alterar o nome da coluna region_name para region ,
+ mantendo o mesmo tipo e tamanho de dados.*/
+
+ALTER TABLE regions CHANGE COLUMN REGION_NAME REGION VARCHAR(25);
+
+/*3 Escreva uma query SQL para alterar o nome da coluna country_name para country ,
+ mantendo o mesmo tipo e tamanho de dados.*/
+
+ALTER TABLE countries CHANGE COLUMN COUNTRY_NAME COUNTRY VARCHAR(40);
 

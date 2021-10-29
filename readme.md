@@ -219,6 +219,15 @@ metodologias ágeis e habilidades comportamentais.
 
 20.4: Projeto Vocabulary Booster :heavy_check_mark:
 
+### Bloco 21: Normalização e modelagem de bancos de dados 
+
+21-1: Transformando ideias em um modelo de bancos de dados parte 1 :heavy_check_mark:
+
+21-2:Normalização, formas normais e dumps :heavy_check_mark:
+
+21-3: Transformando ideias em um modelo de bancos de dados parte 2 :heavy_check_mark:
+
+21-4: Projeto One for All :heavy_check_mark:
 
 
 

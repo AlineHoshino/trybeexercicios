@@ -48,3 +48,16 @@ docker container attach <CONTAINER ID || NAMES>
 # remove todos os containers inativos
 
 docker container prune
+
+# dockerfile 
+
+Arquivo de instrução para montar o ambiente
+
+# docker registry 
+
+Armazena as imagens do docker
+
+A imagem é o conteudo necessario para executar a aplicação 
+
+docker create só cria o container, mas não roda
+daí precisa dar start , uma vez que dei start posso dar um stop.

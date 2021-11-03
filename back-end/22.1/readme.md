@@ -15,7 +15,7 @@ docker container run ubuntu echo 'Hello Tryber!'
 
 docker ps -l (para mostrar qual foi o último container criado)
 
-docker container ls -a -> para mostrar todos os containers
+docker container ls -a -> para mostrar todos os containers, até os que estão parados
 
 # Inicie o mesmo container novamente: 
 docker start 07 
@@ -33,18 +33,31 @@ F - vem de forçar
 * Note que o comando start difere do comando run . O start apenas inicia o container que já havia sido criado (mas estava inativo), enquanto o run cria e executa um novo container!
 
 # Rodando o container de forma interativa
-E se quisermos, por exemplo, utilizar um terminal dentro do container (à la inception) ? É só passar o parâmetro -ti * ao comando run que dá acesso a esse terminal*:
-* O comando -ti são dois comandos juntos:
--t que indica pro docker que estamos requisitando um terminal no container que consiga imprimir o retorno dos nossos comandos;
--i que estabelece uma interface de comunicação física com esse terminal, no caso, por meio do teclado.
 
-docker container run -ti ubuntu
+docker container run -it debian:stable-slim
+
+Rode os comandos diretamente no container
+
+cat /etc/*-release - para ver a distribuição debian
 
 # Retomando o acesso a um container interativo rodando em segundo plano
-Caso você tenha iniciado um container em segundo plano utilizando -dit , você pode acessar esse container rodando o comando attach :
+Caso você tenha iniciado um container em segundo plano utilizando -dit, você pode acessar esse container rodando o comando attach :
 
 docker container attach <CONTAINER ID || NAMES>
 
 # remove todos os containers inativos
 
 docker container prune
+
+# dockerfile 
+
+Arquivo de instrução para montar o ambiente
+
+# docker registry 
+
+Armazena as imagens do docker
+
+A imagem é o conteudo necessario para executar a aplicação 
+
+docker create só cria o container, mas não roda
+daí precisa dar start , uma vez que dei start posso dar um stop.

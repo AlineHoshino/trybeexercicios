@@ -229,6 +229,15 @@ metodologias ágeis e habilidades comportamentais.
 
 21-4: Projeto One for All :heavy_check_mark:
 
+### Bloco 22: Docker: Utilizando containers
+
+22-1: Utilizando containers- Docker :heavy_check_mark:
+
+22-2: Manipulação e ciração de imagens no Docker :heavy_check_mark:
+
+22-3: Orquestrando containers com docker composer
+
+
 
 
 

@@ -1,0 +1,22 @@
+  version: '3'
+
+  services:
+
+    ghost:
+      image: ghost:1-alpine
+      ports:
+        - 2368:2368
+      depends_on: # Utilize a opção depends_on para criar relações de dependências entre os serviços.
+        - "db"
+      environment:
+        # see https://docs.ghost.org/docs/config#section-running-ghost-with-config-env-variables
+        database__client: mysql #Agora precisamos configurar nosso service ghost para utilizar o mysql, para isso defina a variável database__client para mysql ;
+        database__connection__host: db # E então, indique a conexão para o nosso mysql na env database__connection__host ;
+        database__connection__user: root #Para definir o usuário ( root ) e senha (a mesma que definimos no nosso mysql), utilize respectivamente as envs database__connection__user e database__connection__password .
+        database__connection__password: example
+        database__connection__database: ghost # Defina o nome ghost para o nome do database utilizando a variável database__connection__database ;
+
+    db:
+      image: mysql:5.7 # Crie um novo serviço para o nosso banco de dados, utilize a imagem mysql:5.7 ;
+      environment:
+        MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}" # Precisamos definir uma senha root para o nosso bd , para isso utilize a variável MYSQL_ROOT_PASSWORD , lembre-se que é possível utilizar a sintaxe "${}" para passar uma env do host, para a env do container;

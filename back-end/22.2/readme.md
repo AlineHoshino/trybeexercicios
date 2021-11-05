@@ -59,3 +59,18 @@ ver os logs
 Para ver o site dentro do container:
 docker exec -it container id bash 
 curl http://localhost:80
+
+para ter o mysql 
+baixa a imagem : docker pull mysql
+docker run --name container-mysql -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=Trybe123 mysql --default-authentication-plugin=mysql_native_password
+
+Porta 3306 já estava em uso aparece esse erro:
+bind: address already in use.
+Cria o contianer, mas sem porta
+Tive que parar o mysql : sudo systemctl stop mysql
+stop o container docker: container stop be8a
+da o start:docker container start be8a
+
+Instalar o mongo:
+docker pull mongo
+docker run --name container-mongo -p 27017:27017 -d mongo

@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  ghost:
+    image: ghost:1-alpine
+    restart: always # Defina a política de restart para always em todos os serviços;
+    ports:
+      - 2368:2368
+    depends_on:
+      - "db"
+    environment:
+      # see https://docs.ghost.org/docs/config#section-running-ghost-with-config-env-variables
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: example
+      database__connection__database: ghost
+    networks:
+      - my-network
+
+  db:
+    image: mysql:5.7
+    restart: always # Defina a política de restart para always em todos os serviços;
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+    volumes:
+      - db-data:/var/lib/mysql #Configure o nosso serviço mysql para utilizar um volume, conforme vimos no conteúdo, crie o volume db-data e utilize o caminho target /var/lib/mysql .
+    networks:
+      - my-network #Ao invés de utilizar a rede padrão criada pelo Compose, defina uma rede chamada my-network para a comunicação dos dois serviços.
+volumes:
+  db-data:
+
+networks:
+  my-network:

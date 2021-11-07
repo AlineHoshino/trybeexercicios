@@ -40,7 +40,9 @@ docker-compose --version
 Ao dockerizar vamos colocar:
 
 version - que é a versão
+
 no service coloca a imagem que vai usar
+
 ports a porta que vai conectar
 
-docker-compose up 
+docker-compose up

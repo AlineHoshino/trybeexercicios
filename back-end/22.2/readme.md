@@ -1,6 +1,6 @@
 # Readme com resumo sobre criação de imagem, remoção de imagem e dockerfile
 
-##Depois de obter o IMAGE ID , basta executar o comando docker rmi -f <IMAGE ID> , em que rmi vem de " R e m over I magem" ( remove image(s) ).
+## Depois de obter o IMAGE ID , basta executar o comando docker rmi -f <IMAGE ID> , em que rmi vem de " R e m over I magem" ( remove image(s) ).
 
 ## docker rmi -f bc11b176a293
 

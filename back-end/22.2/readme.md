@@ -32,15 +32,15 @@ setar variaveis
 
 FROM nginx
  
-COPY source:fonte de onde vem destine para onde vai 
+COPY (source:fonte de onde vem, destino para onde vai) 
  
-EXPOSE port: qual porta nossa aplicação vai rodar
+EXPOSE ( qual porta nossa aplicação vai rodar)
  
-ENV key=value semelhante a uma variável
+ENV (key=value semelhante a uma variável)
  
-ENTRYPOINT qual executavel nosso container vai usar
+ENTRYPOINT (qual executavel nosso container vai usar)
  
-CMD parametros que serão enviados para esse executavel
+CMD (parametros que serão enviados para esse executavel)
  
 
 Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host:

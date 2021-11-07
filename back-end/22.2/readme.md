@@ -48,6 +48,7 @@ Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse 
 
 echo $PATH para ver o caminho
 
+ ## Gerar build a partir do dockerfile:
 docker build -t roz/hello-nginx:latest
 
 t de tag para imagem 

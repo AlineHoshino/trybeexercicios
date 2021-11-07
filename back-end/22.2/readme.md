@@ -43,7 +43,7 @@ ENTRYPOINT qual executavel nosso container vai usar
 CMD parametros que serão enviados para esse executavel
  
 
-Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host .
+Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host:
   docker inspect <COLOQUE AQUI SEU CONTAINER ID>
 
 echo $PATH para ver o caminho

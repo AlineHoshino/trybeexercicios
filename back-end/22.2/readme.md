@@ -29,11 +29,17 @@ definir qual a porta que vai rodar
 setar variaveis
 
 FROM nginx
+ 
 COPY source:fonte de onde vem destine para onde vai 
+ 
 EXPOSE port: qual porta nossa aplicação vai rodar
+ 
 ENV key=value semelhante a uma variável
+ 
 ENTRYPOINT qual executavel nosso container vai usar
+ 
 CMD parametros que serão enviados para esse executavel
+ 
 
 Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host .
   docker inspect <COLOQUE AQUI SEU CONTAINER ID>

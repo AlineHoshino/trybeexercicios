@@ -82,3 +82,13 @@ A operação acima retornará os cinco primeiros documentos da coleção bios .
 O exemplo abaixo na coleção bios pulará os dois primeiros documentos e retornará o cursor a partir daí:
 
 db.bios.find().skip(2)
+
+
+Projetando somente os atributos requeridos:
+Através do segundo parâmetro do método find() , podemos especificar quais atributos serão retornados. O exemplo abaixo retorna todos os documentos da coleção bios , trazendo apenas o atributo name de cada documento:
+
+db.bios.find({}, { name: 1 })
+
+como ter um json dentro do docker:
+
+docker exec -i container-mongo sh -c 'mongoimport -c books -d class --drop' < books.json

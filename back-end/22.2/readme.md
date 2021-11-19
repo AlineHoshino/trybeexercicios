@@ -1,4 +1,6 @@
-# Depois de obter o IMAGE ID , basta executar o comando docker rmi -f <IMAGE ID> , em que rmi vem de " R e m over I magem" ( remove image(s) ).
+# Readme com resumo sobre criação de imagem, remoção de imagem e dockerfile
+
+## Depois de obter o IMAGE ID , basta executar o comando docker rmi -f <IMAGE ID> , em que rmi vem de " R e m over I magem" ( remove image(s) ).
 
 ## docker rmi -f bc11b176a293
 
@@ -29,17 +31,24 @@ definir qual a porta que vai rodar
 setar variaveis
 
 FROM nginx
-COPY source:fonte de onde vem destine para onde vai 
-EXPOSE port: qual porta nossa aplicação vai rodar
-ENV key=value semelhante a uma variável
-ENTRYPOINT qual executavel nosso container vai usar
-CMD parametros que serão enviados para esse executavel
+ 
+COPY (source:fonte de onde vem, destino para onde vai) 
+ 
+EXPOSE ( qual porta nossa aplicação vai rodar)
+ 
+ENV (key=value semelhante a uma variável)
+ 
+ENTRYPOINT (qual executavel nosso container vai usar)
+ 
+CMD (parametros que serão enviados para esse executavel)
+ 
 
-Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host .
+Obtenha o Mounts através da propriedade Source que deve mostrar o volume desse container no Docker Host:
   docker inspect <COLOQUE AQUI SEU CONTAINER ID>
 
 echo $PATH para ver o caminho
 
+ ## Gerar build a partir do dockerfile:
 docker build -t roz/hello-nginx:latest
 
 t de tag para imagem 

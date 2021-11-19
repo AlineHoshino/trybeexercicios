@@ -1,3 +1,4 @@
+// base de estudo branch de mariana mohr
 import React from 'react';
 import './App.css';
 import pokemons from './data';
@@ -12,7 +13,7 @@ class App extends React.Component {
     this.all = this.all.bind(this);
 
     this.state = {
-      list: [...pokemons],
+      list: pokemons,
       index: 0,
     }
   }

@@ -48,5 +48,3 @@ restart- always (reinicia o container aultomaticamente)
 depends_on(causa dependência entre os serviços) exemplo colocar o front para iniciar só depois do back 
 environment(variáveis de ambiente)
 docker-compose up
-
-

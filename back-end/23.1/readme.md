@@ -1,3 +1,6 @@
+Como usar o mongo no docker:
+docker pull mongo
+docker run --name container-mongo -p 27017:27017 -d mongo
 Estou usando a extensão mongodb for vscode
 ele precisa usar use ('nome do db')
 
@@ -18,6 +21,15 @@ db.nomedaColecao.insertOne({x: 1})
  um insert recebe como parâmetro um JSON
 
  InsertMany para inserir vários dados
+ InsertMany tem de por dentro de um array 
+
+ [
+    { "productName": "Lapis", "stock": 10, "price": 20,"status":"A"},
+    { "productName": "Tesoura", "price": 5, "status": "B" },
+    { "productName": "Borracha", "price": 15, "status": "A" }
+]
+
+
 
  Find ajuda a encontrar os dados:
 Projection:
@@ -91,4 +103,9 @@ db.bios.find({}, { name: 1 })
 
 como ter um json dentro do docker:
 
-docker exec -i container-mongo sh -c 'mongoimport -c books -d class --drop' < books.json
+docker exec -i <container-name> sh -c 'mongoimport -c <namecollection> -d <db.name> --drop' < xxxx.json
+
+outro jeito:
+
+docker cp xxx.json <container-name-or-id>:/tmp/xxx.json
+docker exec <container-name-or-id> mongoimport -d <db-name> -c <c-name> --file /tmp/xxx.json

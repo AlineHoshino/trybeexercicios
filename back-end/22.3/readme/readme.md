@@ -44,3 +44,4 @@ no service coloca a imagem que vai usar
 ports a porta que vai conectar
 
 docker-compose up 
+

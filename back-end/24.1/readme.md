@@ -109,13 +109,13 @@ resultado:
 ]
 
 
-Pense assim: documento tem de ter no minimo esse valor, docuemtno tem de ter no maximo esse valor
+Pense assim: documento tem de ter no minimo esse valor, documento tem de ter no maximo esse valor
 
 ## Operador $currentDate
 
 O operador $currentDate atribui ao valor de um campo a data corrente , utilizando um tipo Date ou timestamp . Se você não especificar o tipo, por padrão, o MongoDB atribuirá o valor do tipo Date .
 
-## $rename
+## $rename coloca o nome antigo da chave e depois o nome que será atualizado. 
 
 use conteudo_trybe;
 db.fruits.insertOne(

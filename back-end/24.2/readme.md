@@ -6,8 +6,8 @@ use sales;
 db.supplies.updateOne(
   { _id: 1 },
   {
-push: {
-      items: {
+$push: {
+      items: {// add como objeto , mas no final vira um array 
         "name": "notepad",
         "price":  35.29,
         "quantity": 2,
@@ -36,9 +36,9 @@ Precisa usar o $each , $each vem seguido de :[]
 db.supplies.updateOne(
   {},
   {
-push: {
+$push: {
       items: {
-each: [
+$each: [
           {
             "name": "pens",
             "price": 56.12,
@@ -84,9 +84,9 @@ Múltiplos modificadores:
 db.supplies.updateOne(
   { _id: 1 },
   {
-push: {
+$push: {
       items: {
-each: [
+$each: [
           {
             "name" : "notepad",
             "price" : 35.29,
@@ -103,8 +103,8 @@ each: [
             "quantity": 5,
           },
         ],
-sort: { quantity: -1 },
-slice: 2,
+$sort: { quantity: -1 },
+$slice: 2,
       },
     },
   },
@@ -177,6 +177,9 @@ resultado:
 
 ## Operador $pull
 
+O operador $pull remove de um array existente todos os elementos com um ou mais valores que atendam à condição especificada.
+
+Removendo todos os itens que atendem a uma condição diretamente no $pull
 {
   _id: 1,
   items: [
@@ -226,7 +229,7 @@ resultado:
 db.supplies.updateMany(
   {},
   {
-pull: {
+$pull: {
       items: {
         name: { $in: ["pens", "envelopes"] },
       },
@@ -262,12 +265,14 @@ resposta
   ],
 }
 
-Removendo todos os itens que atendem a uma condição diretamente no $pull
+Segundo exemplo com $pull:
+
+{ _id: 1, votes: [3, 5, 6, 7, 7, 8] }
 
 db.profiles.updateOne(
   { _id: 1 },
   {
-pull: {
+$pull: {
       votes: { $gte: 6 },
     },
   },
@@ -277,7 +282,7 @@ resposta
 
 { _id: 1, votes: [3,  5] }
 
-$addToSet - garante que valores num array nao sejam duplicados, se já tiver o valor no array ele não insere
+## $addToSet - garante que valores num array nao sejam duplicados, se já tiver o valor no array ele não insere
 
 $[<identifier>]
 

@@ -82,11 +82,46 @@ ratings:true,
 _id:false});
 
 // ex 9:Retorne os filmes da categoria adventure e com ratings maior do que 103 , exibindo apenas os campos title , ratings e category .
-
+//opção1
 use ('class')
 db.movies.find(
 {ratings:{$elemMatch:{$lt: 103}},
 category:{$all:["adventure"]},
+},
+{ title: true,
+ratings:true,
+category:true,
+_id:false});
+
+//opçao2
+use ('class')
+db.movies.find(
+{$and:[
+{ratings:{$elemMatch:{$lt: 103}}},
+{category:"adventure"}
+]},
+{ title: true,
+ratings:true,
+category:true,
+_id:false});
+//opçao3
+use ('class')
+db.movies.find(
+{ratings:{$elemMatch:{$lt: 103}},
+category:"adventure",
+},
+{ title: true,
+ratings:true,
+category:true,
+_id:false});
+
+
+//opcao 4
+
+use ('class')
+db.movies.find(
+{ratings:{$elemMatch:{$lt: 103}},
+category:{$elemMatch:{"adventure"}},
 },
 { title: true,
 ratings:true,
@@ -100,4 +135,50 @@ db.movies.find(
 {category:{$size:2}},
 { title: true,
 _id:false});
+
+//ex 11 Retorne somente o título de todos os filmes com quatro elementos no array ratings .
+use ('class')
+db.movies.find(
+{ratings:{$size:4}},
+{ title: true,
+_id:false});
+
+//ex 12 Busque os filmes em que o módulo 5 do campo budget seja 0 e que o array category tenha tamanho 2 .
+
+use ('class')
+db.movies.find(
+{category:{$size:2},
+budget:{$mod:[5,0]}
+});
+
+// ex 13 Retorne os filmes da categoria "sci-fi" ou que possua o ratings maior do que 199 , exibindo apenas os campos title , ratings e category .
+
+
+db.movies.find(
+  {
+or: [
+      { category: { $all: ["sci-fi"] } },
+      { ratings: { $elemMatch: { $gt: 199 } } }
+    ]
+  },
+  { _id: 0, title: 1, ratings: 1, category: 1 }
+);
+
+//ex 14 Retorne os filmes em que o ratings possua tamanho 4 e que seja da category "adventure" ou "family" , mas que não tenha o imdbRating menor que 7.
+
+db.movies.find({ $and: [
+  { ratings: { $size: 4 } },
+  { category: { $in: ["adventure", "family"] } },
+  { imdbRating: { $not: { $lt: 7 } }}
+]});
+
+//ex 15 Adicione o campo description no filme Batman com o seguinte valor: "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker."
+
+use ('class')
+db.movies.updateOne(
+  {title:"Batman"},
+  {$set:{
+    desciption:"The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker."
+  }}
+)
 

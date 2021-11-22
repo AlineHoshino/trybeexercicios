@@ -75,11 +75,11 @@ resposta:
 
 ## Operador $text
 
-precisa criae um index do tipo text 
+precisa criar um index do tipo text 
 
 db.articles.createIndex({ subject: "text" });
 
 
-depois conegue procurae os termos
+depois consegue procurar os termos
 
 db.articles.find({ $text: { $search: "coffee" } });

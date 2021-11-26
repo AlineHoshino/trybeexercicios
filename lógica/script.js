@@ -43,6 +43,18 @@ function multiples_of_3_or_5(roof) {
     }
   console.log(multiples_of_3_or_5(10))
 
+  /*resolução da trybe
+
+  function multiples_of_3_or5(roof){
+    let total=0;
+    (for let i = roof -1;i>0;i--){
+      if(i %3 ===0 || i% 5 ===0){
+        total+=i
+      }
+    }
+    return total;
+  } */
+
 
 function even_fibonacci_numbers(roof) {
 let fib = [1,2]; 
@@ -92,23 +104,52 @@ function nth_prime(n) {
   return arr[n-1];// como é o sexto elemento ele é o 5 no índice//
 }
 
+/* maior fator primo , o maior numero primo que consegue dividir um numero
+vai ser no maximo ate a metade */
 
-function caixa(values) {
-  let count =0;
-  let soma=0;
-  for(let i=0;i<values.length;i++){
-    if(values[i] ===0){
-      count++
-    }
-    for(let j=1;j<values.length;j++){
-      if(j>1){
-         values.splice(j,count)
-         console.log(values)
-      }
-    }
+// function caixa(values) {
+
+  caixa([1,3,5,4,0,0,7,0,0,6])
+
+function caixa(values){
+  while(values.includes(0)){
+    const zeroindex=values.indexOf(0)// essa funcao pega o indice que esta o zero no array 
+    values.splice(zeroIndex -1,2);//[1,6]
   }
+  return values.reduce((acc,cur)=> acc +cur)
 }
 
-console.log(caixa([1,3,5,4,0,0,7,0,0,6]))
+/*daí no splice faz 4(indice do primeiro zero -1 ), a partir do inice 3(incluso) quero tirar 2 numeros
+daí tirará o 4 e o zero, como ainda tem zero vai continuar o while
+vai ver onde está o indice desse zero e 
+[1,3,5,0,7,0,0,6]
+ve que esta no indice 3, daí 3 -1 , vai dar 2 a partir do indice 2 quero tirar dois numeros 5,0 
+[1,3,7,0,0,6]
+ve que o zero ta no indice 3 , 3 -1 vai dar 2 , vai tirar o 7 e o 0
+[1,3,0,6]
+vai ver que o zero ta no indice 2, 2-1 vai dar 1, vai tirar o 3 e o 0.
+depois somará 1 e 6 que foi os que sobraram. */ 
 
+function firstNaturalSumSquared(n){
+  let sum=0;
+  for(let i=1;i<=n; i++){
+    sum+=i
+  }
+  return sum *sum 
+}
 
+/* aqui ele vai fazer 1+2+3+4 =10 , dái 10*10=100*/
+
+function squaredSum(n){
+  let sum=0;
+  for(let i=1;i<=n;i++){
+    sum+= i * i 
+  }
+  return sum;
+}
+
+/* aqui fica assim 1*1 + 2*2 +3*3 +4*4 =30*/
+
+function sum_square_difference(n){
+return firstNaturalSumSquared(n) -squaredSum(n)
+}

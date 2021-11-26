@@ -84,3 +84,123 @@ $in: ["Batman", "Home Alone"],
 $push: { category: "90's" },
   },
 );
+
+//ex 8 Crie um array de documentos chamado cast para o filme Home Alone com os seguintes dados:
+use ('class')
+db.movies.updateOne(
+  {
+    title: "Home Alone"
+  },
+  {
+$push: { cast:
+{$each:[
+{
+  "actor": "Macaulay Culkin",
+  "character": "Kevin"
+},
+{
+  "actor": "Joe Pesci",
+  "character": "Harry"
+},
+{
+  "actor": "Daniel Stern"
+}
+]}
+  },
+  }
+);
+
+//9 Adicione o campo character com o valor Marv ao array de cast em que o campo actor seja igual a Daniel Stern no filme Home Alone .
+use ('class')
+db.movies.updateOne(
+  {
+    title: "Home Alone",
+    "cast.actor": "Daniel Stern",
+  },
+  {
+    $set: { "cast.2.character": "Marv" },
+  },
+);
+
+//ou 
+
+db.movies.updateOne(
+  {
+    title: "Home Alone",
+    "cast.actor": "Daniel Stern",
+  },
+  {
+set: { "cast.$.character": "Marv" },
+  },
+);
+
+//ex Exercício 10: Crie um array de documentos chamado cast para o filme Batman com os seguintes dados:
+
+use ('class')
+db.movies.updateOne(
+  {
+    title: "Batman",
+  },
+  {
+    $push: { cast:
+    {$each:[
+      {
+  "character": "Batman"
+},
+{
+  "character": "Alfred"
+},
+{
+  "character": "Coringa"
+}
+    ]}
+  },
+  },
+);
+
+// ex 11 roduza três querys para o filme Batman :
+
+//Adicione o campo actor , que deve ser um array com o valor Christian Bale , ao array de cast em que o campo character seja igual a Batman ;
+
+use ('class')
+db.movies.updateOne(
+  {
+    title: "Batman",
+    "cast.character":"Alfred"
+  },
+  {
+    $push: { "cast.$.actor":
+      "Michael Caine"
+    },
+  },
+);
+
+
+use ('class')
+db.movies.updateOne(
+  {
+    title: "Batman",
+    "cast.character":"Coringa"
+  },
+  {
+    $push: { "cast.$.actor":
+      "Heath Ledger"
+    },
+  },
+);
+
+//ex 12 Adicione aos atores de cast do character Batman do filme Batman os valores "Michael Keaton" , "Val Kilmer" e "George Clooney" , e deixe o array em ordem alfabética.
+db.movies.updateOne(
+  {
+    title: "Batman",
+    "cast.character": "Batman",
+  },
+  {
+push: {
+      "cast.$.actor": {
+each: ["Michael Keaton", "Val Kilmer", "George Clooney"],
+sort: 1,
+      },
+    },
+  },
+);

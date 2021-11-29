@@ -9,25 +9,25 @@ docker network ls
 - Criando uma rede:
 
 docker network create --driver bridge rede-local
-2:15
+
 rede-local nome da rede
 
 - Cria o container:
 
 docker container run -itd --name novo_container ubuntu
-2:51
+
 - Depois vincular container a rede:
 
 docker network connect rede-local novo_container
-3:17
+
 
 Pode fazer a criacao do container e ja add na rede:
 
 docker container run -it --name outro_container --network rede-local ubuntu
-3:46
+
 
 Ver a comunicação :ping novo_container
-4:39
+
 
 ### Como instalar o docker compose
 
@@ -48,3 +48,7 @@ restart- always (reinicia o container aultomaticamente)
 depends_on(causa dependência entre os serviços) exemplo colocar o front para iniciar só depois do back 
 environment(variáveis de ambiente)
 docker-compose up
+
+Volume ajuda na persistência de dados 
+
+docker system prune --volumes (deleta tudo de uma vez)

@@ -50,3 +50,5 @@ environment(variáveis de ambiente)
 docker-compose up
 
 Volume ajuda na persistência de dados 
+
+docker system prune --volumes (deleta tudo de uma vez)

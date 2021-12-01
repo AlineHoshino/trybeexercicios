@@ -197,45 +197,39 @@ metodologias ágeis e habilidades comportamentais.
 
 ##  Desenvolvimento Back- End
 
-### Bloco 19: Introdução à SQL
+### Bloco 19: Docker: Utilizando containers
 
-19-1: Banco de dados SQL :heavy_check_mark:
+19-1: Utilizando containers- Docker :heavy_check_mark:
 
-19-2: Encontrando dados em um banco de dados :heavy_check_mark:
+19-2: Manipulação e ciração de imagens no Docker :heavy_check_mark:
 
-19-3: Filtrando dados de forma específica :heavy_check_mark:
+19-3: Orquestrando containers com docker composer :heavy_check_mark:
 
-19-4: Manipulando tabelas :heavy_check_mark:
+19-4- Docker todo-List :heavy_check_mark:
 
-19-5: Projeto All for one :heavy_check_mark:
+### Bloco 20: Introdução à SQL
 
-### Bloco 20: Funções SQL, Joins e subqueries
+20-1: Banco de dados SQL :heavy_check_mark:
 
-20-1: Funções mais usadas no sql :heavy_check_mark:
+20-2: Encontrando dados em um banco de dados :heavy_check_mark:
 
-20.2: Descomplicando JOINS, UNIOS e Subqueries :heavy_check_mark:
+20-3: Filtrando dados de forma específica :heavy_check_mark:
 
-20.3: Stored Routines e Stored functions :heavy_check_mark:
+20-4: Manipulando tabelas :heavy_check_mark:
 
-20.4: Projeto Vocabulary Booster :heavy_check_mark:
+20-5: Projeto All for one :heavy_check_mark:
 
-### Bloco 21: Normalização e modelagem de bancos de dados 
+### Bloco 21: Funções SQL, Joins e Normalização
 
-21-1: Transformando ideias em um modelo de bancos de dados parte 1 :heavy_check_mark:
+21-1: Funções mais usadas no sql :heavy_check_mark:
 
-21-2:Normalização, formas normais e dumps :heavy_check_mark:
+21.2: Descomplicando JOINS, UNIOS e Subqueries :heavy_check_mark:
 
-21-3: Transformando ideias em um modelo de bancos de dados parte 2 :heavy_check_mark:
+21.3:  Transformando ideias em um modelo de bancos de dados parte 1 :heavy_check_mark:
 
 21-4: Projeto One for All :heavy_check_mark:
 
-### Bloco 22: Docker: Utilizando containers
 
-22-1: Utilizando containers- Docker :heavy_check_mark:
-
-22-2: Manipulação e ciração de imagens no Docker :heavy_check_mark:
-
-22-3: Orquestrando containers com docker composer
 
 
 

@@ -153,3 +153,13 @@ function squaredSum(n){
 function sum_square_difference(n){
 return firstNaturalSumSquared(n) -squaredSum(n)
 }
+
+
+let pi = Math.PI
+console.log(pi)
+
+let potencia = Math.pow(2,3)
+console.log(potencia)
+
+let n = Math.round(Math.random()*10)
+console.log(n)

@@ -1,0 +1,16 @@
+{
+  "name": "22.1",
+  "version": "1.0.0",
+  "description": "Node possui módulos internos (core modules): fs: fornece uma Api para interagir url: utilitários para ler e manipular URL querystring:leitura e manipulação de parametros de URL util:ferramentas úteis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "imc": "node imc.js",
+    "velocidade":"node velocidade.js"
+  },
+  "author": "aline",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

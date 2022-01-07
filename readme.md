@@ -231,15 +231,17 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 22: Introdução ao desenvolvimento web com Node.js
 
-22-1: Node.js- Um motor javascript
+22-1: Node.js- Um motor javascript :heavy_check_mark:
 
-22-2: Fluxo assincrono
+22-2: Fluxo assincrono :heavy_check_mark:
 
-22-3:Mocha, Chai e Sinon- Teste de back-end com Node.Js
+22-3:Mocha, Chai e Sinon- Teste de back-end com Node.Js :heavy_check_mark:
 
-22-4: Express-HTTP com Node.js
+22-4: Express-HTTP com Node.js :heavy_check_mark:
 
-22-5: Express- Middlewares
+22-5: Express- Middlewares :heavy_check_mark:
+
+22-6: Projeto Talker Manager
 
 
 

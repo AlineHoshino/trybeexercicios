@@ -6,7 +6,7 @@ const scripts = [
   { name: 'Calcular IMC', script: './imc.js' },
   { name: 'Calcular velocidade média', script: './velocidade.js' },
   { name: 'Jogo de adivinhação', script: './sorteio.js' },
-  {name:'Caluclar fatorial',script:'./fatorial.js'},
+  {name:'Calcular fatorial',script:'./fatorial.js'},
   {name:'Sequência de Fibonacci', script:'./fibonacci.js'}
 ];
 
@@ -29,4 +29,5 @@ if (!script) return console.log('Número inválido. Saindo');
 // Chamamos o script selecionado
 // Note que, no dia a dia, é mais comum utilizarmos outras formas de executar arquivos externos
 // No entanto, para fins didáticos, o `require` nos atende por enquanto.
+console.log(script.script)
 require(script.script);//pq script.script?

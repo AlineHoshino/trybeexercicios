@@ -1,6 +1,8 @@
 ⚠️ Atenção ⚠️ Apesar de ser uma ferramenta muito útil para desenvolvimento, o Nodemon não deve ser utilizado para rodar a aplicação, pois caso seja disponibilizada para a pessoa usuária final (ou seja, em produção), podemos ter problemas de reinicialização da aplicação, devido ao fato de que qualquer alteração em qualquer arquivo afete a aplicação, fazendo com que toda ela seja reiniciada. Para executar uma aplicação em produção , deve-se utilizar o script start com o comando node index.js
 
 
+⚠️ Atenção: Perceba que na linha com o if colocamos um return . Isso serve para indicar para o express que ele deve quebrar o fluxo e não executar a linha res.status(200).json(recipe); . Caso você não coloque o return , sua requisição vai funcionar mas você vai ver um erro como este abaixo no log do seu terminal:
+Não esquecer do return 
 Como vai usar o express: npm i express
 depois como usaremos o nodemon para atualizar npm i nodemon -D
 Antes disso, precisamos fazer uma pequena etapa que é instalar o pacote bodyParser . Como explicamos, os dados enviados pelo front-end são comprimidos, e para que conseguimos remontar os dados enviados precisamos parsear as informações para um formato compreensível para o back-end, esse formato no caso vai ser JSON. Para instalar esse pacote execute o comando:

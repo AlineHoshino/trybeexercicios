@@ -32,23 +32,23 @@
 // app.listen(3000,()=>console.log('ouvindo na porta 3000'))
 
 
-// const express= require('express')
-// const rescue = require('express-rescue');
-// const app = express();
+const express= require('express')
+const rescue = require('express-rescue');
+const app = express();
 
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.json());
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
-// const simpsonsUtils = require('./fs-utils');
+const simpsonsUtils = require('./fs-utils');
 
 
-// app.get('/simpsons', rescue(async (req, res) => {
-//   const simpsons = await simpsonsUtils.getSimpsons();
+app.get('/simpsons', rescue(async (req, res) => {
+  const simpsons = await simpsonsUtils.getSimpsons();
 
-//   res.status(200).json(simpsons);
-// }))
+  res.status(200).json(simpsons);
+}))
 
-// /* ... */
+/* ... */
 
 // app.get(
 //   '/simpsons/:id',
@@ -109,25 +109,25 @@
 /* ... */
 
 
- const express = require('express');
- const app = express();
- const bodyParser = require('body-parser');
- app.use(bodyParser.json());
-const crypto = require('crypto');
-/* ... */
+//  const express = require('express');
+//  const app = express();
+//  const bodyParser = require('body-parser');
+//  app.use(bodyParser.json());
+// const crypto = require('crypto');
+// /* ... */
 
-app.post('/signup', (req, res) => {
-  const { email, password, firstName, phone } = req.body;
+// app.post('/signup', (req, res) => {
+//   const { email, password, firstName, phone } = req.body;
 
-  if ([email, password, firstName, phone].includes(undefined)) {
-    return res.status(401).json({ message: 'missing fields' });
-  }
+//   if ([email, password, firstName, phone].includes(undefined)) {
+//     return res.status(401).json({ message: 'missing fields' });
+//   }
 
-  const token = crypto.randomBytes(8).toString('hex');
+//   const token = crypto.randomBytes(8).toString('hex');
 
-  res.status(200).json({ token });
-})
+//   res.status(200).json({ token });
+// })
 
-/* ... */
-app.listen(3000, () => console.log('ouvindo na porta 3000!'));
+// /* ... */
+// app.listen(3000, () => console.log('ouvindo na porta 3000!'));
 

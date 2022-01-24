@@ -241,7 +241,19 @@ metodologias ágeis e habilidades comportamentais.
 
 22-5: Express- Middlewares :heavy_check_mark:
 
-22-6: Projeto Talker Manager
+22-6: Projeto Talker Manager :heavy_check_mark:
+
+### Bloco 23: Bloco 23 - Node.js: Camada de Serviço e Arquitetura Rest e Restful
+
+23-1: Arquitetura de software- Camda de model
+
+23-2: Arquitetura de software - camada de controller e service
+
+23-3: Arquitetura Web- Rest e restful
+
+23-4:Arquitetura de software - Testando as camadas
+
+23-5: Projeto Store Manager
 
 
 

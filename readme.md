@@ -245,15 +245,25 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 23: Bloco 23 - Node.js: Camada de Serviço e Arquitetura Rest e Restful
 
-23-1: Arquitetura de software- Camda de model
+23-1: Arquitetura de software- Camda de model :heavy_check_mark:
 
-23-2: Arquitetura de software - camada de controller e service
+23-2: Arquitetura de software - camada de controller e service :heavy_check_mark:
 
-23-3: Arquitetura Web- Rest e restful
+23-3: Arquitetura Web- Rest e restful :heavy_check_mark:
 
-23-4:Arquitetura de software - Testando as camadas
+23-4:Arquitetura de software - Testando as camadas :heavy_check_mark:
 
-23-5: Projeto Store Manager
+23-5: Projeto Store Manager :heavy_check_mark:
+
+### Bloco 24: Node.js:ORM e autenticação
+
+24-1: ORM- Interface da aplicação com o banco de dados 
+
+24-2:ORM - Associations
+
+24-3: JWT -(JSON WEB Token)
+
+24-4: Api de blogs
 
 
 

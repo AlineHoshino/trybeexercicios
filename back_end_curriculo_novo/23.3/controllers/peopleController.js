@@ -25,5 +25,27 @@ people.post('/', rescue(async (req, res)=>{
 }));
 
 people.get('/:id', rescue(async (req,res) => {
-  
-}) )
+  const person = await peopleService.getById(req.params.id);
+  res.status(200).json(person);
+}) 
+);
+
+people.put('/:id', rescue(async(req,res)=> {
+validatePeopleSchema(req.body);
+const { id } = req.params;
+const { name, age } = req.body;
+const updatedPerson = await peopleService.update({id, name, age});
+res.status(200).json(updatedPerson)
+})
+);
+
+people.delete(
+  '/:id',
+  rescue(async (req, res) => {
+    await peopleService.remove(req.params.id);
+
+    res.status(204).end();
+  })
+);
+
+module.exports = people;

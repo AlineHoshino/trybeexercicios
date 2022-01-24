@@ -17,3 +17,13 @@ const validatePeopleSchema = (body) => {
   }
 };
 
+people.post('/', rescue(async (req, res)=>{
+  validatePeopleSchema(req.body);
+  const { name, age } = req.body;
+  const newPerson = await peopleService.add({ name, age });
+  res.status(201).json(newPerson);
+}));
+
+people.get('/:id', rescue(async (req,res) => {
+  
+}) )

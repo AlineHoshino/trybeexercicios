@@ -257,13 +257,24 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 24: Node.js:ORM e autenticação
 
-24-1: ORM- Interface da aplicação com o banco de dados 
+24-1: ORM- Interface da aplicação com o banco de dados :heavy_check_mark:
 
-24-2:ORM - Associations
+24-2:ORM - Associations :heavy_check_mark:
 
-24-3: JWT -(JSON WEB Token)
+24-3: JWT -(JSON WEB Token) :heavy_check_mark:
 
-24-4: Api de blogs
+24-4: Testando Apis com testes de integração :heavy_check_mark:
+
+24-5: Projeto- Api de blogs :heavy_check_mark:
+
+### Bloco 25: Deployment
+
+25-1: Infraestrutura- Deploy com Heroku
+
+25-2: Deploy Docker e Heroku
+
+25-3: Projeto Stranger Things
+
 
 
 

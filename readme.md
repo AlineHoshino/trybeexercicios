@@ -269,11 +269,21 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 25: Deployment
 
-25-1: Infraestrutura- Deploy com Heroku
+25-1: Infraestrutura- Deploy com Heroku :heavy_check_mark:
 
-25-2: Deploy Docker e Heroku
+25-2: Deploy Docker e Heroku :heavy_check_mark:
 
-25-3: Projeto Stranger Things
+25-3: Projeto Stranger Things :heavy_check_mark:
+
+### Bloco 26:Typescript
+
+26-1: Introdução- TypeScript
+
+26-2: Tipagem Estática e Generics
+
+26.3: Express com TypeScript
+
+26.4: Projeto Trybe Smith
 
 
 

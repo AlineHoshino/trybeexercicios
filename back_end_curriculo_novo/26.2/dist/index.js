@@ -1,72 +1,132 @@
 "use strict";
-var DaysOfWeek;
-(function (DaysOfWeek) {
-    DaysOfWeek[DaysOfWeek["Sunday"] = 1] = "Sunday";
-    DaysOfWeek[DaysOfWeek["Monday"] = 2] = "Monday";
-    DaysOfWeek[DaysOfWeek["Tuesday"] = 3] = "Tuesday";
-    DaysOfWeek[DaysOfWeek["Wednesday"] = 4] = "Wednesday";
-    DaysOfWeek[DaysOfWeek["Thursday"] = 5] = "Thursday";
-    DaysOfWeek[DaysOfWeek["Friday"] = 6] = "Friday";
-    DaysOfWeek[DaysOfWeek["Saturday"] = 7] = "Saturday";
-})(DaysOfWeek || (DaysOfWeek = {}));
-// tipos de coleção arrays
-let names = ["Mary", "Alan"];
-function printCoord(pt) {
-    console.log("O valor da cordenada x é: " + pt.x);
-    console.log("O valor da coordenada y é: " + pt.y);
+// ./index.ts
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const process_1 = require("process");
+const readline_sync_1 = __importDefault(require("readline-sync"));
+const Months_1 = __importDefault(require("./Months"));
+const Seasons_1 = __importDefault(require("./Seasons"));
+const monthsNames = Object.values(Months_1.default).
+    map(item => item);
+const choiceMonth = readline_sync_1.default.keyInSelect(monthsNames, "Escolha um mês do ano", { cancel: "SAIR" });
+// O método .keyInSelect mostra uma interface
+// de escolha para a pessoa usuária
+if (choiceMonth === -1) {
+    console.log("Saindo!");
+    (0, process_1.exit)();
 }
-printCoord({ x: 100, y: 100 });
-// No TypeScript , as classes são uma maneira de definir a forma de um objeto,
-// podemos considerar uma classe como um projeto para a criação de objetos
-var EyeColor;
-(function (EyeColor) {
-    EyeColor["Black"] = "Pretos";
-    EyeColor["Blue"] = "Azuis";
-    EyeColor["Green"] = "Verdes";
-    EyeColor["Brown"] = "Castanhos";
-})(EyeColor || (EyeColor = {}));
-// usamos a palavra reservada class para definir uma classe
-class Person {
-    // aprenderemos mais sobre o construtor no próximo bloco
-    // considere-o como uma função utilizada para construir um objeto a partir da classe
-    // nele recebemos todos os dados necessários para construir um objeto de pessoa
-    constructor(name, birthDate, eyeColor) {
-        // usamos o this para acessar as propriedades da instância da classe
-        // ele representa a própria instância que estamos criando
-        // atribuimos o valor do parâmetro recebido a propriedade da instância da classe
-        this.name = name;
-        this.birthDate = birthDate;
-        this.eyeColor = eyeColor;
-    }
-    speak() {
-        console.log(`${this.name} está falando.`);
-    }
-    eat() {
-        console.log(`${this.name} está comendo.`);
-    }
-    walk() {
-        console.log(`${this.name} está andando.`);
-    }
+const seasonsSouth = {
+    [Seasons_1.default.OUTONO]: [Months_1.default.MARCO, Months_1.default.ABRIL, Months_1.default.MAIO, Months_1.default.JUNHO],
+    [Seasons_1.default.INVERNO]: [Months_1.default.JUNHO, Months_1.default.JULHO, Months_1.default.AGOSTO, Months_1.default.SETEMBRO],
+    [Seasons_1.default.PRIMAVERA]: [Months_1.default.SETEMBRO, Months_1.default.OUTUBRO, Months_1.default.NOVEMBRO, Months_1.default.DEZEMBRO],
+    [Seasons_1.default.VERAO]: [Months_1.default.DEZEMBRO, Months_1.default.JANEIRO, Months_1.default.FEVEREIRO, Months_1.default.MARCO],
+};
+// Criamos um objeto onde suas chaves são as estações
+// e seus valores são os meses. Note abaixo um segundo
+// objeto onde, sendo do hemisfério oposto, as estações
+// são opostas também
+const seasonsNorth = {
+    [Seasons_1.default.PRIMAVERA]: seasonsSouth[Seasons_1.default.OUTONO],
+    [Seasons_1.default.VERAO]: seasonsSouth[Seasons_1.default.INVERNO],
+    [Seasons_1.default.OUTONO]: seasonsSouth[Seasons_1.default.PRIMAVERA],
+    [Seasons_1.default.INVERNO]: seasonsSouth[Seasons_1.default.VERAO],
+};
+const hemispheres = {
+    "Norte": seasonsNorth,
+    "Sul": seasonsSouth
+};
+const choiceHemisphere = readline_sync_1.default.keyInSelect(Object.keys(hemispheres), "Escolha um hemisfério", { cancel: "SAIR" });
+// O método .keyInSelect mostra uma interface
+// de escolha para a pessoa usuária
+if (choiceHemisphere === -1) {
+    console.log("Saindo!");
+    (0, process_1.exit)();
 }
-// usamos a palavra reservada new para criar uma instância de Person
-// e passamos os parâmetros necessários para o construtor
-const person1 = new Person("Jane Doe", new Date("1986-01-01"), EyeColor.Brown);
-const person2 = new Person("Jon Doe", new Date("1980-08-05"), EyeColor.Black);
-console.log(person1);
-person1.speak();
-// saída:
-// Person: {
-//   "name": "Jane Doe",
-//   "birthDate": "1986-01-01T00:00:00.000Z",
-//   "eyeColor": "Castanhos"
-// }
-// "Jane Doe está falando."
-console.log(person2);
-person2.walk();
-// saída:
-// Person: {
-//   "name": "Jon Doe",
-//   "birthDate": "1980-08-05T00:00:00.000Z",
-//   "eyeColor": "Pretos"
-// }
-// "Jon Doe está andando."
+const month = Object.values(Months_1.default)[choiceMonth];
+const hemisphere = Object.keys(hemispheres)[choiceHemisphere];
+console.log(`Mês: \n${month}`);
+console.log(`Hemisfério: \n${hemisphere}`);
+console.log(`Estações:`);
+const chosenHemisphereSeasons = Object.values(hemispheres)[choiceHemisphere];
+Object.entries(chosenHemisphereSeasons).map((entry) => {
+    const seasons = entry[0];
+    const months = entry[1];
+    // São os meses de cada estação. Caso esteja
+    // incluído em mais de uma estação, o console
+    // abaixo irá adicionar
+    if (months.includes(month))
+        console.log(seasons);
+});
+// ./index.ts
+const Car_1 = __importDefault(require("./Car"));
+const Colors_1 = __importDefault(require("./Colors"));
+const Directions_1 = __importDefault(require("./Directions"));
+const Doors_1 = __importDefault(require("./Doors"));
+const gol = new Car_1.default("Volksvagem", Colors_1.default.SILVER, 4);
+gol.openTheDoor(Doors_1.default.DRIVER);
+gol.closeTheDoor(Doors_1.default.DRIVER);
+gol.turnOn();
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions_1.default.LEFT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions_1.default.RIGHT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions_1.default.RIGHT);
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Doors_1.default.BEHIND_RIDE);
+gol.closeTheDoor(Doors_1.default.BEHIND_RIDE);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions_1.default.RIGHT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions_1.default.LEFT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions_1.default.RIGHT);
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Doors_1.default.BEHIND_RIDE);
+gol.closeTheDoor(Doors_1.default.BEHIND_RIDE);
+gol.speedUp();
+const nutela = {
+    flavor: "Nutela",
+    slices: 4
+};
+console.log(nutela);
+const calabresa = {
+    flavor: "Calabresa",
+    slices: 6
+};
+console.log(calabresa);
+const frango = {
+    flavor: "Frango",
+    slices: 8
+};
+console.log(frango);
+const pepperoni = {
+    flavor: "Pepperoni",
+    slices: 6
+};
+console.log(pepperoni);
+const marguerita = {
+    flavor: "Marguerita",
+    slices: 8
+};
+console.log(marguerita);
+const palmito = {
+    flavor: "Palmito",
+    slices: 8
+};
+console.log(palmito);
+const goiabadaEQueijo = {
+    flavor: "Goiabada com Queijo",
+    slices: 4
+};
+console.log(goiabadaEQueijo);

@@ -10,3 +10,6 @@ class Person {
     name: string;
     birthDate: Date;
     eyeColor?: EyeColor;
+
+
+Uma interface não inicializa, nem implementa as propriedades declaradas dentro dela, porque o único trabalho de uma interface é descrever o objeto. Ela define o que o contrato de código exige, enquanto quem implementa a interface deve atender ao contrato fornecendo os detalhes de implementação necessários.

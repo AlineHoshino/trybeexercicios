@@ -1,111 +1,169 @@
-enum DaysOfWeek {
-  Sunday = 1,
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday,
+// ./index.ts
+
+import { exit } from "process";
+import readline from "readline-sync";
+import Months from "./Months";
+import Seasons from "./Seasons";
+
+const monthsNames = Object.values(Months).
+    map(item => item);
+
+const choiceMonth = readline.keyInSelect(monthsNames, "Escolha um mês do ano", { cancel: "SAIR" });
+// O método .keyInSelect mostra uma interface
+// de escolha para a pessoa usuária
+
+if (choiceMonth === -1) {
+    console.log("Saindo!");
+    exit();
 }
 
-// tipos de coleção arrays
+const seasonsSouth = {
+    [Seasons.OUTONO]: [Months.MARCO, Months.ABRIL, Months.MAIO, Months.JUNHO],
+    [Seasons.INVERNO]: [Months.JUNHO, Months.JULHO, Months.AGOSTO, Months.SETEMBRO],
+    [Seasons.PRIMAVERA]: [Months.SETEMBRO, Months.OUTUBRO, Months.NOVEMBRO, Months.DEZEMBRO],
+    [Seasons.VERAO]: [Months.DEZEMBRO, Months.JANEIRO, Months.FEVEREIRO, Months.MARCO],
+}
+// Criamos um objeto onde suas chaves são as estações
+// e seus valores são os meses. Note abaixo um segundo
+// objeto onde, sendo do hemisfério oposto, as estações
+// são opostas também
 
- let names: string[] = ["Mary", "Alan"];
-
-
-
- type Point = {
-  x: number;
-  y: number;
-};
-
-
-function printCoord(pt: Point) {
-  console.log("O valor da cordenada x é: " + pt.x);
-  console.log("O valor da coordenada y é: " + pt.y);
+const seasonsNorth = {
+    [Seasons.PRIMAVERA]: seasonsSouth[Seasons.OUTONO],
+    [Seasons.VERAO]: seasonsSouth[Seasons.INVERNO],
+    [Seasons.OUTONO]: seasonsSouth[Seasons.PRIMAVERA],
+    [Seasons.INVERNO]: seasonsSouth[Seasons.VERAO],
 }
 
-printCoord({ x: 100, y: 100 });
-//saída:
-//O valor da cordenada x é: 100
-//O valor da cordenada y é: 100type Point = {
-// ao estabelecxer um tipo posso usá-lo mais de uma vez
-
-type Bird = {
-  wings:2;
-  beaks:1;
-  biped:true;
+const hemispheres = {
+    "Norte": seasonsNorth,
+    "Sul": seasonsSouth
 }
 
-//Type Unions (união de tipos) é uma forma de declarar que um objeto é um tipo formado a partir de dois ou mais outros tipos, 
-//representando valores que podem ser qualquer um desses tipos. Para isso, é preciso declarar os tipos esperados separados por barras.
+const choiceHemisphere = readline.keyInSelect(Object.keys(hemispheres), "Escolha um hemisfério", { cancel: "SAIR" });
+// O método .keyInSelect mostra uma interface
+// de escolha para a pessoa usuária
 
-type StateofMatter ="liquid" | "solid" | "gaseous";
-
-// No TypeScript , as classes são uma maneira de definir a forma de um objeto,
-// podemos considerar uma classe como um projeto para a criação de objetos
-
-enum EyeColor {
-  Black = "Pretos",
-  Blue = "Azuis",
-  Green = "Verdes",
-  Brown = "Castanhos",
+if (choiceHemisphere === -1) {
+    console.log("Saindo!");
+    exit();
 }
 
-// usamos a palavra reservada class para definir uma classe
-class Person {
-  name: string;
-  birthDate: Date; // o tipo Date está presente no TypeScript assim como no JavaScript
-  eyeColor: EyeColor; // na cor dos olhos usamos uma Enum com valores pré definidos
+const month = Object.values(Months)[choiceMonth];
 
-  // aprenderemos mais sobre o construtor no próximo bloco
-  // considere-o como uma função utilizada para construir um objeto a partir da classe
-  // nele recebemos todos os dados necessários para construir um objeto de pessoa
-  constructor(name: string, birthDate: Date, eyeColor: EyeColor) {
-      // usamos o this para acessar as propriedades da instância da classe
-      // ele representa a própria instância que estamos criando
-      // atribuimos o valor do parâmetro recebido a propriedade da instância da classe
-      this.name  = name;
-      this.birthDate  = birthDate;
-      this.eyeColor  = eyeColor;
-  }
+const hemisphere = Object.keys(hemispheres)[choiceHemisphere];
 
-  speak(): void {
-      console.log(`${this.name} está falando.`);
-  }
+console.log(`Mês: \n${month}`);
+console.log(`Hemisfério: \n${hemisphere}`);
+console.log(`Estações:`);
+const chosenHemisphereSeasons = Object.values(hemispheres)[choiceHemisphere]
+Object.entries(chosenHemisphereSeasons).map((entry) => {
+    const seasons = entry[0];
+    const months = entry[1];
+    // São os meses de cada estação. Caso esteja
+    // incluído em mais de uma estação, o console
+    // abaixo irá adicionar
 
-  eat(): void {
-      console.log(`${this.name} está comendo.`)
-  }
+    if (months.includes(month)) console.log(seasons);
+});
 
-  walk(): void {
-      console.log(`${this.name} está andando.`)
-  }
+// ./index.ts
+
+import Car from "./Car";
+import Colors from "./Colors";
+import Directions from "./Directions";
+import Doors from "./Doors";
+
+
+const gol = new Car("Volksvagem", Colors.SILVER, 4);
+
+gol.openTheDoor(Doors.DRIVER);
+gol.closeTheDoor(Doors.DRIVER);
+gol.turnOn();
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.LEFT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.RIGHT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.RIGHT);
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Doors.BEHIND_RIDE);
+gol.closeTheDoor(Doors.BEHIND_RIDE);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.RIGHT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.LEFT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.RIGHT);
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Doors.BEHIND_RIDE);
+gol.closeTheDoor(Doors.BEHIND_RIDE);
+gol.speedUp();
+
+// ./index.ts
+
+import Pizza from "./Pizza";
+
+
+const nutela: Pizza = {
+    flavor: "Nutela",
+    slices: 4
 }
 
-// usamos a palavra reservada new para criar uma instância de Person
-// e passamos os parâmetros necessários para o construtor
-const person1 = new Person("Jane Doe", new Date("1986-01-01"), EyeColor.Brown);
-const person2 = new Person("Jon Doe", new Date("1980-08-05"), EyeColor.Black);
+console.log(nutela);
 
-console.log(person1);
-person1.speak()
+// ./index.ts
 
-// saída:
-// Person: {
-//   "name": "Jane Doe",
-//   "birthDate": "1986-01-01T00:00:00.000Z",
-//   "eyeColor": "Castanhos"
-// }
-// "Jane Doe está falando."
+import PizzaVegetarian from "./PizzaVegetarian";
+import PizzaCommon from "./PizzaCommon";
+import PizzaSugar from "./PizzaSugar";
 
-console.log(person2);
-person2.walk();
+const calabresa: PizzaCommon = {
+    flavor: "Calabresa",
+    slices: 6
+}
 
-// saída:
-// Person: {
-//   "name": "Jon Doe",
-//   "birthDate": "1980-08-05T00:00:00.000Z",
-//   "eyeColor": "Pretos"
-// }
-// "Jon Doe está andando."
+console.log(calabresa);
+
+const frango: PizzaCommon = {
+    flavor: "Frango",
+    slices: 8
+}
+
+console.log(frango);
+
+const pepperoni: PizzaCommon = {
+    flavor: "Pepperoni",
+    slices: 6
+}
+
+console.log(pepperoni);
+
+const marguerita: PizzaVegetarian = {
+    flavor: "Marguerita",
+    slices: 8
+}
+
+console.log(marguerita);
+
+const palmito: PizzaVegetarian = {
+    flavor: "Palmito",
+    slices: 8
+}
+
+console.log(palmito);
+
+const goiabadaEQueijo: PizzaSugar = {
+    flavor: "Goiabada com Queijo",
+    slices: 4
+}
+
+console.log(goiabadaEQueijo);

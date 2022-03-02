@@ -277,13 +277,29 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 26:Typescript
 
-26-1: Introdução- TypeScript
+26-1: Introdução- TypeScript :heavy_check_mark:
 
-26-2: Tipagem Estática e Generics
+26-2: Tipagem Estática e Generics :heavy_check_mark:
 
-26.3: Express com TypeScript
+26.3: Express com TypeScript :heavy_check_mark:
 
-26.4: Projeto Trybe Smith
+26.4: Projeto Trybe Smith :heavy_check_mark:
+
+### Bloco 27: Programação Orientada a Objetos (POO) e SOLID
+
+27-1: Introdução à orientação a objetos
+
+27-2: Herança e interfaces
+
+27-3: Polimorfismo
+
+27-4: SOLID- Introdução e Princípios S, O, D
+
+27-5: SOLID- Princípios L e I
+
+27-6: Projeto- Trybers and Dragons
+
+
 
 
 

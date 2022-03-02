@@ -1,7 +1,5 @@
 // ./index.ts
-// ./index.ts
-
-import express, { Request, Response } from "express";
+import express from 'express';
 import BooksRoutes from "./routes/books";
 
 const PORT = 8000;

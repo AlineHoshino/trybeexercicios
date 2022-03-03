@@ -28,6 +28,3 @@
 // const tv1 = new Tv('LG', 32, '4K', ['HDMI', 'USB', 'Wi-Fi']);
 // tv1.turnOn();
 // console.log('Connected to: ', tv1.connectedTo);
-
-
-// Código Gabriel Gaspar

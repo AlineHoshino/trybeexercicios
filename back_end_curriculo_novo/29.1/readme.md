@@ -26,3 +26,8 @@ Novo resultado sem  o id:
     "title" : "Forrest Gump",
     "imdb_rating" : 8.8
 }
+
+no find nao tem o primeiro parametro é só projeção e nao tem query 
+
+Não tem estrutura fixa , porque tem estrutura noSQL, os documentos são normalmente modelados usando a formatação JSON e, em seguida, inseridos no banco de dados onde são convertidos em dados binários.
+

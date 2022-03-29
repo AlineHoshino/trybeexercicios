@@ -8,6 +8,8 @@ outra opcao : npx tsc --init
 
 para compilar: npx tsc
 
+npm init -y - iniciar um node com package.json
+
 
 **Os atributos criados com o modificador private só podem ser lidos e modificados dentro da classe**. Isso significa que se você tentar utilizar a notação objeto.atributo do lado de fora das chaves que delimitam a criação da classe, você terá um erro do compilador.
 Os atributos criados com o modificador readonly podem ser lidos em qualquer lugar, mas só podem ser inicializados uma vez, no construtor. Apesar desse modificador não estar exatamente ligado a Orientação a Objetos, mas é legal que você saiba da existência dele 😉.

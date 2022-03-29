@@ -1,19 +1,13 @@
 import PizzaSize from "./pizzas/PizzaSize";
 
-interface IPizza {
- size:PizzaSize;
-}
-export default class Pizza implements IPizza {
-  // private size: PizzaSize;
+export default class Pizza {
+  protected size: PizzaSize;
   protected ingredients: string[];
-  constructor( private _size: PizzaSize){
-    // this.size = size;
+  constructor( size: PizzaSize){
+    this.size = size;
     this.ingredients = ['massa'];
   }
 
-  get size(){
-    return this._size
-  }
   public makePizza(): string {
     return `${this.size} pizza está sendo preparada!`
   };

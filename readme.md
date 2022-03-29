@@ -287,19 +287,33 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 27: Programação Orientada a Objetos (POO) e SOLID
 
-27-1: Introdução à orientação a objetos
+27-1: Introdução à orientação a objetos :heavy_check_mark:
 
-27-2: Herança e interfaces
+27-2: Herança e interfaces :heavy_check_mark:
 
-27-3: Polimorfismo
+27-3: Polimorfismo :heavy_check_mark:
 
-27-4: SOLID- Introdução e Princípios S, O, D
+27-4: SOLID- Introdução e Princípios S, O, D  :heavy_check_mark:
 
-27-5: SOLID- Princípios L e I
+27-5: SOLID- Princípios L e I :heavy_check_mark:
 
-27-6: Projeto- Trybers and Dragons
+27-6: Projeto- Trybers and Dragons :heavy_check_mark:
 
+### Bloco 28: Projeto- TFC- Trybe Futebol Clube
 
+### Bloco 29: Introdução ao MongoDB
+
+29-1: MongoDB- Introdução :heavy_check_mark:
+
+29-2: Filter Operators :heavy_check_mark:
+
+29-3: Operadores de consulta
+
+29-4: Updates simples
+
+29-5: Updates Complexos
+
+29-6: Projeto- Commerce
 
 
 

@@ -13,3 +13,6 @@ A consulta abaixo retorna todos os documentos da coleção inventory em que o va
 db.inventory.find({ qty: { $in: [ 5, 15 ] } })
 
 { $or: [{ <expression1> }, { <expression2> }, ... , { <expressionN> }] }
+
+db.colecao.find().sort({ nomeDoAtributo: 1 }) // certo
+db.colecao.sort({ nomeDoAtributo: 1 }) // errado

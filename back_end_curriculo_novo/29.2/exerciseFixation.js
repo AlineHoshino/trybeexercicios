@@ -14,8 +14,6 @@ use('bunisses')
 db.restaurants.find({ cuisine: { $ne: "American" } }).countDocuments();
 
 // meu gabarito 
-use('bunisses')
-db.restaurants.find({ cuisine: { $ne: "American" } }).count();
 
 use('bunisses')
 db.restaurants.countDocuments({ cuisine: { $ne: "American" } })
@@ -38,6 +36,9 @@ db.restaurants.countDocuments({rating:{$nin:[5,6,7]}})
 
 // exercises operadores lógicos
 //ex 1 nao deveria usar o existes?
+//gabarito trybe
+db.restaurants.find({ rating: { $not: { $lte: 5 } }}).countDocuments();
+//meu gabarito
 use('bunisses')
 db.restaurants.countDocuments({$and:[{ rating: { $not: { $lte: 5 } }},{rating:{$exists:false}} ]})
 
@@ -63,7 +64,7 @@ db.restaurants.countDocuments({$and:[
 ]
 })
 
-// exercise 5 - retorno 0 
+// exercise 5 - retorno 0 -Não é intuitivo
 db.restaurants.countDocuments({
   and: [
         { $or: [{ rating: { $gt: 6, $lt: 10 } }] },
@@ -75,3 +76,17 @@ db.restaurants.countDocuments({
 
 use('bunisses')
 db.restaurants.find().sort({name:1})
+
+// exercise 2
+
+use('bunisses')
+db.restaurants.find().sort({rating:-1})
+
+// exercises de deleteOne
+use('bunisses')
+db.restaurants.deleteOne({ cuisine: "Ice Cream, Gelato, Yogurt, Ices" });
+
+// exercise deletMany 
+
+use('bunisses')
+db.restaurants.deleteMany({cuisine:"American"})

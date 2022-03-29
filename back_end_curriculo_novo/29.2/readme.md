@@ -16,3 +16,5 @@ db.inventory.find({ qty: { $in: [ 5, 15 ] } })
 
 db.colecao.find().sort({ nomeDoAtributo: 1 }) // certo
 db.colecao.sort({ nomeDoAtributo: 1 }) // errado
+
+Olhar o readme do dia 23.2 da pasta back_end curriculo antigo.

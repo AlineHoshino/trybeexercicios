@@ -74,3 +74,27 @@ db.supplies.find( { $expr: { $lt:[ discountedPrice,  NumberDecimal("5") ] } });
     }
   }
 ]
+
+db.rpoducts.insertMany(
+  [ { _id: 100, sku: "abc123", description: "Single line description." },
+{ _id: 101, sku: "abc789", description: "First line\nSecond line" },
+{ _id: 102, sku: "xyz456", description: "Many spaces before     line" },
+{ _id: 103, sku: "xyz789", description: "Multiple\nline description" }]
+)
+
+db.rpoducts.find({sku:{$regex:/789$/}})
+
+db.inventory.find({qty:{$mod:[4,0]}})
+
+[
+  {
+    "_id": 1,
+    "item": "abc123",
+    "qty": 0
+  },
+  {
+    "_id": 3,
+    "item": "ijk123",
+    "qty": 12
+  }
+]

@@ -1,4 +1,3 @@
-Operadores de consulta iteram sobre arrays 
 
 o O operador $all seleciona todos os documentos em que o valor do campo é um array que contenha todos os elementos especificados. Se compararmos aos operadores que já conhecemos, esse operador é equivalente ao operador $and , pois fará a comparação de todos os valores especificados, porém, para arrays .
 
@@ -36,3 +35,9 @@ expr: { $gt: [ "$spent", "$budget" ] }
 );
 
 Note que, na query , nenhum valor foi especificado explicitamente. O que acontece é que o operador $expr entende que deve comparar os valores dos dois campos. Por isso o $ é utilizado, indicando que a string entre aspas referencia um campo.
+
+
+O operador $regex fornece os "poderes" das expressões regulares ( regular expressions ) para seleção de strings
+
+ o operador $mod , que seleciona todos os documentos em que o valor do campo dividido por um divisor seja igual ao valor especificado (ou seja, executa a operação matemática módulo).
+Operação módulo: encontra o resto da divisão de um número por outro.

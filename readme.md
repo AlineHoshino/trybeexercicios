@@ -327,15 +327,15 @@ metodologias ágeis e habilidades comportamentais.
 
 31-1: Projeto- App de delivery :heavy_check_mark: 
 
-## Bloco 32: MasterClass - VPS,CI/CD
+### Bloco 32: MasterClass - VPS,CI/CD
 
 32-1: Dia 1 :heavy_check_mark:
 
 32-2: Dia 2 :heavy_check_mark:
 
-### Ciência da computação
+## Ciência da computação
 
-## Bloco 33: Aprendendo Python
+### Bloco 33: Aprendendo Python
 
 33-1: Aprendendo Python
 

@@ -195,7 +195,7 @@ metodologias ágeis e habilidades comportamentais.
 
 18.5-1: Projeto - App de Receitas :heavy_check_mark:
 
-##  Desenvolvimento Back- End
+##  Desenvolvimento Back- End :heavy_check_mark:
 
 ### Bloco 19: Docker: Utilizando containers
 
@@ -307,18 +307,43 @@ metodologias ágeis e habilidades comportamentais.
 
 29-2: Filter Operators :heavy_check_mark:
 
-29-3: Operadores de consulta
+29-3: Operadores de consulta :heavy_check_mark:
 
-29-4: Updates simples
+29-4: Updates simples :heavy_check_mark:
 
-29-5: Updates Complexos
+29-5: Updates Complexos :heavy_check_mark:
 
-29-6: Projeto- Commerce
+29-6: Projeto- Commerce :heavy_check_mark:
 
+### Bloco 30: MongoDB com Node.js e POO
 
+30-1: MongoDb e arquitetura MSC :heavy_check_mark:
 
+30-2: Mongo DB e POO :heavy_check_mark:
 
+30-3: Projeto- Car Shop :heavy_check_mark:
 
+### Bloco 31: Projeto - App de Delivery
+
+31-1: Projeto- App de delivery :heavy_check_mark: 
+
+## Bloco 32: MasterClass - VPS,CI/CD
+
+32-1: Dia 1 :heavy_check_mark:
+
+32-2: Dia 2 :heavy_check_mark:
+
+### Ciência da computação
+
+## Bloco 33: Aprendendo Python
+
+33-1: Aprendendo Python
+
+33-2: Entrada e saída de dados
+
+33-3: Testes
+
+33-4: Projeto - Job Insights
 
 
 

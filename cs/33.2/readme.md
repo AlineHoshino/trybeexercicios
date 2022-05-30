@@ -1,5 +1,5 @@
 Venv - ambiente virtual 
-source .venv/bon/activate - ativa o script
+source .venv/bin/activate - ativa o script
 recebendo dados: input("digite seu número")
 
 Em Python, podemos fazer interpolação de variáveis e expressões utilizando f-string. Adicionamos um f antes das aspas e o valor de saída entre chaves. Essa dica é importante, pois é a maneira mais eficiente de formatar strings.

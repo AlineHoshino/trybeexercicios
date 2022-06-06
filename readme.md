@@ -337,14 +337,23 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 33: Aprendendo Python
 
-33-1: Aprendendo Python
+33-1: Aprendendo Python :heavy_check_mark:
 
-33-2: Entrada e saída de dados
+33-2: Entrada e saída de dados :heavy_check_mark:
 
-33-3: Testes
+33-3: Testes :heavy_check_mark:
 
-33-4: Projeto - Job Insights
+33-4: Projeto - Job Insights :heavy_check_mark:
 
+### Bloco 34: Padrões de projeto
+
+34-1: POO em python :heavy_check_mark:
+
+34-2: Padrões Iterator, adapter, Strategy :heavy_check_mark:
+
+34-3: Decorator, Observer, Factory
+
+34-4: Projeto- Relatório de estoques
 
 
 

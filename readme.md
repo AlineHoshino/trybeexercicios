@@ -351,9 +351,9 @@ metodologias ágeis e habilidades comportamentais.
 
 34-2: Padrões Iterator, adapter, Strategy :heavy_check_mark:
 
-34-3: Decorator, Observer, Factory
+34-3: Decorator, Observer, Factory :heavy_check_mark:
 
-34-4: Projeto- Relatório de estoques
+34-4: Projeto- Relatório de estoques :heavy_check_mark:
 
 
 

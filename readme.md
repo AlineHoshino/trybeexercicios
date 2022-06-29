@@ -355,7 +355,23 @@ metodologias ágeis e habilidades comportamentais.
 
 34-4: Projeto- Relatório de estoques :heavy_check_mark:
 
+### Bloco 35: Redes e raspagem de dados
+
+35-1: Arquitetura de redes, ferramentas e segurança :heavy_check_mark:
+
+35-2: Raspagem de dados :heavy_check_mark:
+
+35-3: Projeto Tech News :heavy_check_mark:
 
 
+### Bloco 35: Algoritmos
+
+36-1: Complexidade de algoritmos
+
+36-2: Recursividade e estratégias para solução de problemas
+
+36-3: Algoritmos de ordenação de busca
+
+36-4: Projeto algoritmos
 
 

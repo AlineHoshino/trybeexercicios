@@ -364,7 +364,7 @@ metodologias ágeis e habilidades comportamentais.
 35-3: Projeto Tech News :heavy_check_mark:
 
 
-### Bloco 35: Algoritmos
+### Bloco 36: Algoritmos
 
 36-1: Complexidade de algoritmos
 

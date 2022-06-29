@@ -1,0 +1,1 @@
+Um algoritmo recursivo deve possuir um caso base

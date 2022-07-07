@@ -366,12 +366,23 @@ metodologias ágeis e habilidades comportamentais.
 
 ### Bloco 36: Algoritmos
 
-36-1: Complexidade de algoritmos
+36-1: Complexidade de algoritmos :heavy_check_mark:
 
-36-2: Recursividade e estratégias para solução de problemas
+36-2: Recursividade e estratégias para solução de problemas :heavy_check_mark:
 
-36-3: Algoritmos de ordenação de busca
+36-3: Algoritmos de ordenação de busca :heavy_check_mark:
 
-36-4: Projeto algoritmos
+36-4: Projeto algoritmos :heavy_check_mark:
 
+### Bloco 37: Estruturas de dados I: Arrays, Listas , Filas e pilhas
+
+37-1: Arquitetura de computadores :heavy_check_mark:
+
+37-2: Arrays :heavy_check_mark:
+
+37-3: Nós e Listas encadeadas
+
+37-4: Pilhas e filas
+
+37-5: TING Trybe is Not Google
 

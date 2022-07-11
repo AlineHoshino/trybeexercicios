@@ -380,9 +380,11 @@ metodologias ágeis e habilidades comportamentais.
 
 37-2: Arrays :heavy_check_mark:
 
-37-3: Nós e Listas encadeadas
+37-3: Nós e Listas encadeadas :heavy_check_mark:
 
-37-4: Pilhas e filas
+37-4: Pilhas e filas :heavy_check_mark:
 
-37-5: TING Trybe is Not Google
+37-5: TING Trybe is Not Google :heavy_check_mark:
+
+
 

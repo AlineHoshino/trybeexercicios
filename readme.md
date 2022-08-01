@@ -333,7 +333,7 @@ metodologias ágeis e habilidades comportamentais.
 
 32-2: Dia 2 :heavy_check_mark:
 
-## Ciência da computação
+## Ciência da computação :heavy_check_mark:
 
 ### Bloco 33: Aprendendo Python
 
@@ -386,5 +386,11 @@ metodologias ágeis e habilidades comportamentais.
 
 37-5: TING Trybe is Not Google :heavy_check_mark:
 
+### Bloco 38: Estruturas de dados II: Hashmaps e Sets
 
+38-1: Hashmap e Dict :heavy_check_mark:
+
+38-2: Set :heavy_check_mark:
+
+38-3: Projeto- Restaurant Order :heavy_check_mark:
 
